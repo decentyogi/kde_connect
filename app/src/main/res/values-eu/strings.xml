@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE Connect</string>
+  <string name="manifest_label_share">Bidali gailura</string>
+  <string name="foreground_notification_no_devices">Ez dago ezein gailuetara konektaturik</string>
+  <string name="foreground_notification_devices">Honetara konektatua: %s</string>
+  <string name="foreground_notification_send_clipboard">Bidali arbelekoa</string>
+  <string name="pref_plugin_telephony">Telefonia jakinarazlea</string>
+  <string name="pref_plugin_telephony_desc">Bidali jakinarazpenak sarrerako deietarako</string>
+  <string name="pref_plugin_battery">Bateriaren txostena</string>
+  <string name="pref_plugin_battery_desc">Bidali bateriaren egoera aldiro</string>
+  <string name="pref_plugin_connectivity_report">Konektagarritasun txostena</string>
+  <string name="pref_plugin_connectivity_report_desc">Eman sareko seinale-sendotasunaren eta egoeraren berri</string>
+  <string name="pref_plugin_digitizer">Marrazketa-tableta</string>
+  <string name="pref_plugin_digitizer_desc">Erabili gailu hau presioarekiko sentikorra den marrazketa-tableta gisa</string>
+  <string name="pref_plugin_sftp">Fitxategi-sistemara sarbidea</string>
+  <string name="pref_plugin_sftp_desc">Gailu honen fitxategi-sistema urrunetik arakatzea ahalbidetzen du</string>
+  <string name="pref_plugin_clipboard">Arbelaren sinkronizazioa</string>
+  <string name="pref_plugin_clipboard_desc">Partekatu arbelaren edukia</string>
+  <string name="pref_plugin_clipboard_sent">Arbelekoa bidali da</string>
+  <string name="pref_plugin_mousepad">Urrutiko sarrera</string>
+  <string name="pref_plugin_mousepad_desc_nontv">Erabili zure telefonoa edo tableta ukimen-sagu eta teklatu gisa</string>
+    <string name="pref_plugin_presenter">Aurkezpenetarako urruneko agintea</string>
+  <string name="pref_plugin_presenter_desc">Erabili zure gailua aurkezpen bateko diapositibak aldatzeko</string>
+  <string name="pref_plugin_remotekeyboard">Jaso urruneko tekla-sakatzeak</string>
+  <string name="pref_plugin_remotekeyboard_desc">Jaso tekla-sakatze gertaerak urruneko gailuetatik</string>
+  <string name="pref_plugin_mpris">Multimedia kontrolak</string>
+  <string name="pref_plugin_mpris_desc">Zure euskarri-jotzailearen urruneko kontrola ematen dizu</string>
+  <string name="pref_plugin_runcommand">Exekutatu agindua</string>
+  <string name="pref_plugin_runcommand_desc">Abiarazi urruneko aginduak zure telefono edo tabletatik</string>
+  <string name="pref_plugin_contacts">Kontaktuen sinkronizatzailea</string>
+  <string name="pref_plugin_contacts_desc">Utzi gailuaren kontaktuen liburuak sinkronizatzen</string>
+    <string name="pref_plugin_notifications">Jakinarazpenen sinkronizazioa</string>
+  <string name="pref_plugin_notifications_desc">Atzitu zure jakinarazpenak beste gailuetatik</string>
+  <string name="pref_plugin_receive_notifications">Jaso jakinarazpenak</string>
+  <string name="pref_plugin_receive_notifications_desc">Jaso jakinarazpenak beste gailutik eta bistaratu Androiden</string>
+  <string name="pref_plugin_sharereceiver">Partekatu eta jaso</string>
+  <string name="pref_plugin_sharereceiver_desc">Partekatu fitxategiak eta URLak gailuen artean</string>
+  <string name="pref_plugin_inputdevicesreceiver">Partekatu sarrerako gailuak</string>
+  <string name="pref_plugin_inputdevicesreceiver_desc">Partekatu sagua eta teklatua urrutiko gailuekin</string>
+  <string name="device_list_empty">Gailurik ez</string>
+  <string name="ok">Ados</string>
+    <string name="cancel">Utzi</string>
+  <string name="open_settings">Ireki ezarpenak</string>
+  <string name="no_permissions">Jakinarazpenak atzitzeko baimena eman behar duzu</string>
+    <string name="no_permissions_remotekeyboard">Sakatzeak jasotzeko KDE Connecten urruneko teklatua aktibatu behar duzu</string>
+    <string name="open_mpris_controls">Multimedia kontrola</string>
+    <string name="remotekeyboard_not_connected">Ez dago urruneko teklatuarekin konexio aktiborik, ezarri bat kdeconnect erabiliz</string>
+  <string name="remotekeyboard_connected">Urruneko teklatuarekin konexioa aktibo dago</string>
+  <string name="remotekeyboard_multiple_connections">Urruneko teklatuekin konexio bat baino gehiago dago, hautatu konfiguratu beharreko gailua</string>
+  <string name="open_mousepad">Urruneko sarrera</string>
+  <string name="open_mousepad_tv">TBko urrutiko agintea</string>
+    <string name="mousepad_single_tap_settings_title">Ezarri hatz bakarrarekin tak egitearen ekintza</string>
+  <string name="mousepad_double_tap_settings_title">Ezarri bi hatzez tak egitearen ekintza</string>
+  <string name="mousepad_triple_tap_settings_title">Ezarri hiru hatzez tak egitearen ekintza</string>
+  <string name="mousepad_sensitivity_settings_title">Ezarri ukimen-saguaren sentikortasuna</string>
+  <string name="mousepad_mouse_buttons_title">Erakutsi saguaren botoiak</string>
+  <string name="mousepad_acceleration_profile_settings_title">Ezarri erakuslearen azelerazio</string>
+  <string name="mousepad_scroll_direction_title">Alderantzikatu korritzearen norabidea</string>
+  <string name="mousepad_scroll_sensitivity_title">Kiribiltze sentikortasuna</string>
+  <string name="gyro_mouse_enabled_title">Gaitu giroskopio-sagua</string>
+  <string name="gyro_mouse_sensitivity_title">Giroskopioaren sentikortasuna</string>
+    <string-array name="mousepad_tap_entries">
+    <item>Ezkerreko klik</item>
+    <item>Eskuineko klik</item>
+    <item>Erdiko klik</item>
+    <item>Ezer ez</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>Motelena</item>
+    <item>Motelena baino azkarrago</item>
+    <item>Lehenetsia</item>
+    <item>Batezbestekoa baino azkarrago</item>
+    <item>Azkarrena</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>Azeleraziorik ez</item>
+    <item>Ahulena</item>
+    <item>Ahulagoa</item>
+    <item>Ertaina</item>
+    <item>Sendoagoa</item>
+    <item>Sendoena</item>
+  </string-array>
+    <string name="sendkeystrokes_pref_category_title">Bidali tekla-joaldiak</string>
+  <string name="sendkeystrokes_pref_enabled">Gaitu tekla-joaldiak bidaltzea</string>
+  <string name="sendkeystrokes_pref_enabled_summary">\'text/x-keystrokes\' MIME-motako datuak entzutea</string>
+  <string name="sendkeystrokes_safe_text_enabled">Bidali testu segurua berehala</string>
+  <string name="sendkeystrokes_safe_text_enabled_summary">Bidali zenbakizko kate laburrak berrespenik gabe</string>
+    <string name="mouse_receiver_plugin_description">Jaso urrutiko saguaren mugimenduak</string>
+  <string name="mouse_receiver_plugin_name">Sagu jasotzailea</string>
+  <string name="mouse_receiver_no_permissions">Urrutiko ukipen sarrerak jasotzeko, zure gailua erabat agintzeko Irisgarritasun baimenak eman behar dituzu</string>
+    <string name="category_connected_devices">Konektatutako gailuak</string>
+  <string name="category_not_paired_devices">Gailu eskuragarriak</string>
+    <string name="device_menu_unpair">Desparekatu</string>
+    <string name="unknown_sender">Igorle ezezaguna</string>
+  <string name="error_not_reachable">Gailua ez dago eskuragarri</string>
+  <string name="error_already_paired">Gailua dagoeneko parekatuta</string>
+  <string name="error_timed_out">Denbora-muga agortu da</string>
+  <string name="error_clocks_not_match">Gailuetako erlojuak ez daude sinkronizatuta</string>
+  <string name="error_canceled_by_user">Erabiltzaileak utzita</string>
+  <string name="error_canceled_by_other_peer">Beste kideak utzita</string>
+    <string name="pair_requested">Parekatzea eskatu da</string>
+    <plurals name="incoming_file_title">
+    <item quantity="one">%2$s(e)tik fitxategi %1$d jasotzen</item>
+    <item quantity="other">%2$s(e)tik %1$d fitxategi jasotzen</item>
+  </plurals>
+  <plurals name="incoming_files_text">
+    <item quantity="one">Fitxategia: %1s</item>
+    <item quantity="other">(%3$d(e)tik %2$d fitxategia) : %1$s</item>
+  </plurals>
+  <plurals name="outgoing_file_title">
+    <item quantity="one">"%2$s(r)i  %1$d fitxategi bidaltzea"</item>
+    <item quantity="other">"%2$s(r)i  %1$d fitxategi bidaltzea"</item>
+  </plurals>
+  <plurals name="outgoing_files_text">
+    <item quantity="one">Fitxategia: %1$s</item>
+    <item quantity="other">(%3$d(e)tik %2$d. fitxategia) : %1$s</item>
+  </plurals>
+  <plurals name="received_files_title">
+    <item quantity="one">Fitxategi bat jaso da %1$s-tik</item>
+    <item quantity="other">%2$d fitxategi jaso dira %1$s-tik</item>
+  </plurals>
+  <plurals name="received_files_fail_title">
+    <item quantity="one">Huts egin du fitxategi bat %1$s-tik jasotzeak</item>
+    <item quantity="other">Huts egin du %2$d/%3$d fitxategi %1$s-tik jasotzeak</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="one">Fitxategia %1$s(e)ra bidali da</item>
+    <item quantity="other">%2$d fitxategi %1$s(e)ra bidali dira</item>
+  </plurals>
+  <plurals name="send_files_fail_title">
+    <item quantity="one">Huts egin du fitxategia %1$s(e)ra bidaltzea</item>
+    <item quantity="other">"Huts egin du %3$d(e)tik  %2$d fitxategi %1$s(e)ra bidaltzea"</item>
+  </plurals>
+    <string name="received_file_text">Tak egin \'%1s\' irekitzeko</string>
+  <string name="cannot_create_file">Ezin da sortu %s fitxategia</string>
+    <string name="show_keyboard">Erakutsi teklatua</string>
+    <string name="device_not_paired">Gailua parekatu gabe</string>
+  <string name="pairing_duplicate_names">Kontuz: Izen bereko hainbat gailu daude.</string>
+  <string name="request_pairing">Eskatu parekatzea</string>
+  <string name="pairing_accept">Onartu</string>
+  <string name="pairing_reject">Errefusatu</string>
+  <string name="pairing_explanation">Bi gailu parekatzea elkarren sarbidea emango die. Zure gailu propioak baino ez parekatu.</string>
+  <string name="settings">Ezarpenak</string>
+  <string name="mpris_play">Jo</string>
+  <string name="mpris_pause">Eten</string>
+  <string name="mpris_previous">Aurrekoa</string>
+  <string name="mpris_rew">Atzera eraman</string>
+  <string name="mpris_ff">Aurrera eraman</string>
+  <string name="mpris_next">Hurrengoa</string>
+  <string name="mpris_loop">Begizta</string>
+  <string name="mpris_shuffle">Nahasi</string>
+    <string name="mpris_notification_settings_title">Erakutsi euskarri kontrolaren jakinarazpena</string>
+  <string name="mpris_notification_settings_summary">Utzi zure euskarri-jotzaileak kontrolatzen KDE Connect ireki gabe</string>
+  <string name="share_to">Partekatu honekin…</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+  <string name="unreachable_device_url_share_text">Gailu eskuraezinekin partekatutako URLak, hartara bidaliko dira eskuragarri dagoenean.\n\n</string>
+    <string name="protocol_version_newer">Gailu honek protokoloaren bertsio berriago bat erabiltzen du</string>
+  <string name="plugin_settings_with_name">%s ezarpenak</string>
+    <string name="shareplugin_text_saved">Testua jaso da, arbelean kopiatu da</string>
+    <string name="share_destination_folder_preference">Direktorio xedea</string>
+  <string name="share">Partekatu</string>
+  <string name="share_received_file">Partekatu \"%s\"</string>
+    <string name="show_notification_if_screen_off">Bidali jakinarazpenak bakarrik pantaila itzalita badago</string>
+    <string name="add_device_hint">Ostalari-izena edo IP helbidea</string>
+  <string name="sftp_preference_configured_storage_locations">Konfiguratutako biltegiratze kokalekuak</string>
+  <string name="sftp_preference_add_storage_location_title">Gehitu biltegiratze kokalekua</string>
+  <string name="sftp_preference_edit_storage_location">Editatu biltegiratze kokalekua</string>
+    <string name="sftp_storage_preference_storage_location_already_configured">Kokaleku hau jada konfiguratuta dago</string>
+    <string name="sftp_storage_preference_display_name">Azaltzeko izena</string>
+  <string name="sftp_storage_preference_display_name_already_used">Azaltzeko izen hau jada erabilita dago</string>
+  <string name="sftp_storage_preference_display_name_cannot_be_empty">Azaltzeko izena ezin da hutsik egon</string>
+  <string name="sftp_action_mode_menu_delete">Ezabatu</string>
+  <string name="sftp_no_storage_locations_configured">Ez da biltegiratze kokalekurik konfiguratu</string>
+    <string name="sftp_manage_storage_permission_explanation">gailu honetako fitxategietara urrutiko sarbidea baimentzeko, «KDE Connect»eri biltegiratzea kudeatzeko baimena eman behar diozu.</string>
+  <string name="sftp_missing_permission_error">Baimenak falta dira: fitxategi-sistemara sarbidea</string>
+    <string name="use_digitizer">Erabili marrazketa-tableta gisa</string>
+    <string name="block_notification_contents">Oztopatu jakinarazpenen edukia</string>
+  <string name="block_notification_images">Oztopatu jakinarazpenen irudiak</string>
+  <string name="pairing_title">KDE Connect gailuak</string>
+  <string name="pairing_description">KDE Connect darabilten sareko beste gailuak hemen agertu beharko lirateke.</string>
+    <string name="unreachable_description">Parekatutako gailu hau ez dago eskuragarri. Egiaztatu sare berera konektatuta dagoela.</string>
+  <string name="no_wifi">Ez zaude Wi-Fi sare batera konektatuta, baliteke gailurik ez ikustea. Egin klik hemen Wi-Fia gaitzeko.</string>
+  <string name="on_non_trusted_message">Ez dago konfiantza duen sare batean: aurkitze automatikoa desgaituta dago.</string>
+    <string name="pref_plugin_telepathy">Bidali SMS</string>
+  <string name="pref_plugin_telepathy_desc">Bidali testu-mezuak zure mahaigainetik</string>
+    <string name="findmyphone_title">Bilatu nire telefonoa</string>
+    <string name="findmyphone_description">Gailuaren dei-doinua jotzen du aurki dezazun</string>
+  <string name="findmyphone_found">Aurkitu du</string>
+  <string name="open">Ireki</string>
+  <string name="close">Itxi</string>
+    <string name="select_ringtone">Hautatu dei-tonu bat</string>
+  <string name="telephony_pref_blocked_title">Blokeatutako zenbakiak</string>
+    <string name="presenter_fullscreen">Pantaila-betea</string>
+  <string name="presenter_exit">Irten aurkezpenetik</string>
+    <string name="add_command">Gehitu komando bat</string>
+  <string name="addcommand_explanation">Ez dago komandorik erregistraturik</string>
+  <string name="addcommand_explanation2">Komando berriak gehitu ditzakezu KDE Connect sistemaren ezarpenetan</string>
+  <string name="add_command_description">Komandoak gehitu ditzakezu mahaigainean</string>
+  <string name="pref_plugin_mprisreceiver">Euskarri-jotzailearen kontrola</string>
+  <string name="pref_plugin_mprisreceiver_desc">Kontrolatu zure telefonoaren euskarri-jotzaileak beste gailu batetik</string>
+  <string name="notification_channel_default">Beste jakinarazpen batzuk</string>
+  <string name="notification_channel_persistent">Adierazle iraunkorra</string>
+  <string name="notification_channel_media_control">Euskarrien kontrola</string>
+  <string name="notification_channel_filetransfer">Sarrerako fitxategi transmisioa</string>
+  <string name="notification_channel_filetransfer_complete">Sarrerako fitxategi transmisioa osatu da</string>
+  <string name="notification_channel_filetransfer_upload">Irteerako fitxategi transmisioa</string>
+  <string name="notification_channel_filetransfer_error">Fitxategi transmisio errorea</string>
+  <string name="notification_channel_high_priority">Lehentasun handia</string>
+    <string name="clipboard_toast">Arbelera kopiatua</string>
+  <string name="runcommand_notreachable">Gailua ez dago eskuragarri</string>
+  <string name="runcommand_notpaired">Gailua ez dago parekatua</string>
+  <string name="runcommand_nosuchdevice">Ez dago halako gailurik</string>
+  <string name="runcommand_noruncommandplugin">Gailu honek ez dauka gaituta «Exekutatu Komandoa» plugina</string>
+    <string name="pref_plugin_findremotedevice">Aurkitu urruneko gailua</string>
+  <string name="pref_plugin_findremotedevice_desc">Jo zure urruneko gailuaren tonua</string>
+    <string name="pref_plugin_systemvolume">Sistemaren bolumena</string>
+  <string name="pref_plugin_systemvolume_desc">Kontrolatu urruneko gailuaren sistemako bolumena</string>
+    <string name="settings_rename">Gailuaren izena</string>
+    <string name="settings_export_logs">Esportatu KDE Connect-en egunkariak</string>
+  <string name="settings_export_logs_text">Sortu arazoak konpontzen lagun dezakeen exekuzio informazioa duen fitxategi bat.</string>
+    <string name="privacy_options">Pribatutasun aukerak</string>
+    <string name="notification_channel_receivenotification">Beste gailu batzuen jakinarazpenak</string>
+  <string name="findmyphone_preference_title_flashlight">Esku-argia keinuka piztu</string>
+  <string name="no_app_for_opening">Ez da fitxategi hau irekitzeko aplikazio egokirik aurkitu</string>
+  <string name="remote_keyboard_service">KDE Connect urruneko teklatua</string>
+  <string name="presenter_pointer">Erakuslea</string>
+    <string name="add_trusted_network">Gehitu %1s</string>
+    <string name="location_permission_needed_title">Baimena beharrezkoa da</string>
+    <string name="bigscreen_home">Etxea</string>
+  <string name="bigscreen_up">Gora</string>
+  <string name="bigscreen_left">Ezkerrean</string>
+  <string name="bigscreen_select">Hautatu</string>
+  <string name="bigscreen_right">Eskuinean</string>
+  <string name="bigscreen_down">Behera</string>
+  <string name="bigscreen_back">Atzera</string>
+  <string name="bigscreen_mic">Mikrofonoa</string>
+  <string name="pref_plugin_bigscreen">TBko urrutiko agintea</string>
+    <string name="bigscreen_speech_extra_prompt">Hizketa</string>
+    <string name="set_group_message_as_mms_title">Bidali taldeko MMS</string>
+  <string name="set_long_text_as_mms_title">Bidali testu luzea MMS gisa</string>
+  <string name="convert_to_mms_after_title">Bihurtu MMS</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>Mezu baten ondoren</item>
+    <item>Bi mezu ondoren</item>
+    <item>Hiru mezu ondoren</item>
+    <item>Lau mezu ondoren</item>
+    <item>Bost mezu ondoren</item>
+  </string-array>
+  <string name="theme_dialog_title">Aukeratu gaia</string>
+  <string-array name="theme_list">
+    <item>Ezarri bateria aurrezteko</item>
+    <item>Argia</item>
+    <item>Iluna</item>
+  </string-array>
+    <string name="report_bug">Akats baten berri eman</string>
+  <string name="donate">Egin dohaintza</string>
+  <string name="source_code">Sorburu kodea</string>
+  <string name="licenses">Lizentziak</string>
+  <string name="website">Webgunea</string>
+  <string name="about">Honi buruz</string>
+  <string name="authors">Egileak</string>
+    <string name="version">%s bertsioa</string>
+    <string name="click_here_to_type">Tak egin hemen tekleatzeko</string>
+    <string name="double_tap_to_drag">Tak bikoitza arrastatzeko</string>
+  <string name="hold_to_drag">Eutsi arrastatzeko</string>
+    <string name="maintainer_and_developer">Arduraduna eta garatzailea</string>
+  <string name="developer">Garatzailea</string>
+  <string name="apple_support">macOS-ren euskarria. iOS-en euskarria lantzen</string>
+  <string name="bug_fixes_and_general_improvements">Akatsen konponketa eta hobekuntza orokorrak</string>
+  <string name="samoilenko_yuri_task">SFTP inplementatzea, akatsen konponketa eta hobekuntza orokorrak</string>
+  <string name="aniket_kumar_task">SMS pluginaren hobekuntzak</string>
+  <string name="alex_fiestas_task">Kontaktuen pluginaren hobekuntzak</string>
+  <string name="maxim_leshchenko_task">Erabiltzaile-interfazean hobekuntzak eta Honi buru orria hau</string>
+  <string name="holger_kaelberer_task">Urruneko teklatuaren plugina eta akatsen konponketa</string>
+  <string name="saikrishna_arcot_task">Urruneko sarrerako pluginean teklatua erabiltzeko euskarria, akatsen konponketa eta hobekuntza orokorrak</string>
+  <string name="shellwen_chen_task">SFTPren segurtasuna hobetu, proiektu honen mantentze-gaitasuna hobetu, akatsak konpondu eta hobekuntza orokorrak</string>
+  <string name="everyone_else">Urteetan KDE Connect-ekin lagundu duten gainerako guztiak</string>
+  <string name="send_clipboard">Bidali arbelekoa</string>
+  <string name="tap_to_execute">Tak egin exekutatzeko</string>
+    <string name="enable_bluetooth">Gaitu bluetooth (beta)</string>
+    <string name="findmyphone_camera_explanation">Kameraren baimenak telefonoa bilatzean esku-argia keinuka pizteko aukera ematen du</string>
+    <string name="mpris_keepwatching">Jarraitu jotzen</string>
+  <string name="mpris_keepwatching_settings_title">Jarraitu jotzen</string>
+  <string name="mpris_keepwatching_settings_summary">Hedabidea itxi ondoren, gailu honetan jotzen jarraitzeko jakinarazpen ixil bat erakutsi.</string>
+  <string name="notification_channel_keepwatching">Jarraitu jotzen</string>
+  <string name="ping_result">«Ping» %1$d milisegundotan egin da</string>
+  <string name="ping_failed">Ezin izan dio gailuari «ping» egin</string>
+  <string name="ping_in_progress">«Ping» egiten…</string>
+    <string name="enable_fullscreen">Gaitu pantaila osoa</string>
+  <string name="pref_presenter_enable_volume_keys_title">Bolumen-botoiek diapositibak aldatzen dituzte</string>
+  <string name="pref_presenter_sensitivity_title">Erakuslearen sentikortasuna</string>
+  <string name="pref_presenter_enable_volume_keys_summary">Egonean egotea ez da onartzen Android 13 eta 15 bertsioen artean</string>
+  <string name="presenter_volume_keys_foreground_tip">Pantaila piztuta utz dezakezu, bolumen-botoiekin aurreko/hurrengo diapositibara joateko</string>
+  <string name="presenter_volume_keys_tip">Pantaila piztuta edo gailua giltzatuta utzi dezakezu, bolumen-botoiekin aurreko/hurrengo diapositibara joateko</string>
+</resources>

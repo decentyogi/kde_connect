@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+SPDX-FileCopyrightText: 2023 Dmitry Yudin <dgyudin@gmail.com>
+
+SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+-->
+
+<resources>
+    <style name="KdeConnectThemeBase.V27" parent="KdeConnectThemeBase">
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightNavigationBar">?attr/isLightTheme</item>
+    </style>
+
+    <style name="KdeConnectTheme" parent="KdeConnectThemeBase.V27" />
+
+</resources>

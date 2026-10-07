@@ -1,0 +1,288 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE Connect</string>
+  <string name="manifest_label_share">发送到设备</string>
+  <string name="foreground_notification_no_devices">未连接到任何设备</string>
+  <string name="foreground_notification_devices">已连接到：%s</string>
+  <string name="foreground_notification_send_clipboard">发送剪贴板</string>
+  <string name="pref_plugin_telephony">来电通知</string>
+  <string name="pref_plugin_telephony_desc">发送来电通知</string>
+  <string name="pref_plugin_battery">电池报告</string>
+  <string name="pref_plugin_battery_desc">定期报告电池状态</string>
+  <string name="pref_plugin_connectivity_report">连接报告</string>
+  <string name="pref_plugin_connectivity_report_desc">报告网络信号强度和状态</string>
+  <string name="pref_plugin_digitizer">数位板</string>
+  <string name="pref_plugin_digitizer_desc">使用您的设备作为带有压感的数位板</string>
+  <string name="pref_plugin_sftp">文件系统访问</string>
+  <string name="pref_plugin_sftp_desc">允许远程浏览设备的文件系统</string>
+  <string name="pref_plugin_clipboard">剪贴板同步</string>
+  <string name="pref_plugin_clipboard_desc">共享剪贴板内容</string>
+  <string name="pref_plugin_clipboard_sent">剪贴板已发送</string>
+  <string name="pref_plugin_mousepad">远程输入</string>
+  <string name="pref_plugin_mousepad_desc_nontv">将您的手机或平板电脑用作触摸板和键盘</string>
+    <string name="pref_plugin_presenter">演示遥控</string>
+  <string name="pref_plugin_presenter_desc">使用移动设备切换幻灯片</string>
+  <string name="pref_plugin_remotekeyboard">接收远程按键</string>
+  <string name="pref_plugin_remotekeyboard_desc">从远程设备接收按键事件</string>
+  <string name="pref_plugin_mpris">多媒体控制</string>
+  <string name="pref_plugin_mpris_desc">遥控媒体播放器</string>
+  <string name="pref_plugin_runcommand">运行命令</string>
+  <string name="pref_plugin_runcommand_desc">触发您的手机或平板电脑的远程命令</string>
+  <string name="pref_plugin_contacts">联系人同步</string>
+  <string name="pref_plugin_contacts_desc">允许同步设备的通讯录</string>
+    <string name="pref_plugin_notifications">通知同步</string>
+  <string name="pref_plugin_notifications_desc">从其他设备访问您的通知</string>
+  <string name="pref_plugin_receive_notifications">接收通知</string>
+  <string name="pref_plugin_receive_notifications_desc">从其他设备接收通知并显示在 Android 上</string>
+  <string name="pref_plugin_sharereceiver">发送和接收</string>
+  <string name="pref_plugin_sharereceiver_desc">在设备间共享文件和链接</string>
+  <string name="pref_plugin_inputdevicesreceiver">共享输入设备</string>
+  <string name="pref_plugin_inputdevicesreceiver_desc">与远程设备共享鼠标和键盘</string>
+  <string name="device_list_empty">无设备</string>
+  <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+  <string name="open_settings">打开设置</string>
+  <string name="no_permissions">您需要授予权限以访问通知</string>
+    <string name="no_permissions_remotekeyboard">要接收按键，您需要激活 KDE Connect 远程键盘</string>
+    <string name="open_mpris_controls">多媒体控制</string>
+    <string name="remotekeyboard_not_connected">没有活动的远程键盘链接，请在 KDE Connect 中连接</string>
+  <string name="remotekeyboard_connected">远程键盘连接已启用</string>
+  <string name="remotekeyboard_multiple_connections">发现多个远程键盘连接，请选择要配置的设备</string>
+  <string name="open_mousepad">远程输入</string>
+  <string name="open_mousepad_tv">电视遥控器</string>
+    <string name="mousepad_single_tap_settings_title">设置单指点击操作</string>
+  <string name="mousepad_double_tap_settings_title">设置双指点击操作</string>
+  <string name="mousepad_triple_tap_settings_title">设置三指点击操作</string>
+  <string name="mousepad_sensitivity_settings_title">设置触摸板灵敏度</string>
+  <string name="mousepad_mouse_buttons_title">显示鼠标按钮</string>
+  <string name="mousepad_acceleration_profile_settings_title">设置指针加速度</string>
+  <string name="mousepad_scroll_direction_title">反转滚动方向</string>
+  <string name="mousepad_scroll_sensitivity_title">滚动灵敏度</string>
+  <string name="gyro_mouse_enabled_title">启用陀螺仪鼠标</string>
+  <string name="gyro_mouse_sensitivity_title">陀螺仪灵敏度</string>
+    <string-array name="mousepad_tap_entries">
+    <item>左键点击</item>
+    <item>右键点击</item>
+    <item>中键点击</item>
+    <item>无操作</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>最慢</item>
+    <item>高于最慢</item>
+    <item>默认</item>
+    <item>高于默认</item>
+    <item>最快</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>无加速</item>
+    <item>最弱</item>
+    <item>更弱</item>
+    <item>中等</item>
+    <item>更强</item>
+    <item>最强</item>
+  </string-array>
+    <string name="sendkeystrokes_pref_category_title">发送按键</string>
+  <string name="sendkeystrokes_pref_enabled">启用按键发送</string>
+  <string name="sendkeystrokes_pref_enabled_summary">监听 MIME 类型为 “text/x-keystrokes” 的数据</string>
+  <string name="sendkeystrokes_safe_text_enabled">立刻发送安全文本</string>
+  <string name="sendkeystrokes_safe_text_enabled_summary">发送短纯数字串时无需确认</string>
+    <string name="mouse_receiver_plugin_description">接收远程鼠标移动</string>
+  <string name="mouse_receiver_plugin_name">鼠标接收器</string>
+  <string name="mouse_receiver_no_permissions">要远程接受触摸输入，您必须授予完全控制此设备的访问权限</string>
+    <string name="category_connected_devices">已连接的设备</string>
+  <string name="category_not_paired_devices">可用的设备</string>
+    <string name="device_menu_unpair">取消配对</string>
+    <string name="unknown_sender">未知发送者</string>
+  <string name="error_not_reachable">设备不可及</string>
+  <string name="error_already_paired">设备已配对</string>
+  <string name="error_timed_out">超时</string>
+  <string name="error_clocks_not_match">设备时钟不同步</string>
+  <string name="error_canceled_by_user">已被用户取消</string>
+  <string name="error_canceled_by_other_peer">已被其他对等点取消</string>
+    <string name="pair_requested">已请求配对</string>
+    <plurals name="incoming_file_title">
+    <item quantity="other">正在从 %2$s 接收 %1$d 个文件</item>
+  </plurals>
+  <plurals name="incoming_files_text">
+    <item quantity="other">(%3$d 个文件中的第 %2$d 个)：%1$s</item>
+  </plurals>
+  <plurals name="outgoing_file_title">
+    <item quantity="other">正在发送 %1$d 个文件到 %2$s</item>
+  </plurals>
+  <plurals name="outgoing_files_text">
+    <item quantity="other">(%3$d 个文件中的 %2$d 个)：%1$s</item>
+  </plurals>
+  <plurals name="received_files_title">
+    <item quantity="other">已从 %1$s 接收了 %2$d 个文件</item>
+  </plurals>
+  <plurals name="received_files_fail_title">
+    <item quantity="other">从 %1$s 接收的 %3$d 个文件中的 %2$d 个失败</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="other">已发送 %2$d 个文件到 %1$s</item>
+  </plurals>
+  <plurals name="send_files_fail_title">
+    <item quantity="other">发送给 %1$s 的 %3$d 个文件中的 %2$d 个失败</item>
+  </plurals>
+    <string name="received_file_text">点击打开“%1s”</string>
+  <string name="cannot_create_file">无法创建文件 %s</string>
+    <string name="show_keyboard">显示键盘</string>
+    <string name="device_not_paired">设备未配对</string>
+  <string name="pairing_duplicate_names">注意：存在多个同名设备。</string>
+  <string name="request_pairing">请求配对</string>
+  <string name="pairing_accept">接受</string>
+  <string name="pairing_reject">拒绝</string>
+  <string name="pairing_explanation">两个设备在配对后即可相互访问。请只配对您自己的设备。</string>
+  <string name="settings">设置</string>
+  <string name="mpris_play">播放</string>
+  <string name="mpris_pause">暂停</string>
+  <string name="mpris_previous">上一曲</string>
+  <string name="mpris_rew">倒退</string>
+  <string name="mpris_ff">快进</string>
+  <string name="mpris_next">下一曲</string>
+  <string name="mpris_loop">循环播放</string>
+  <string name="mpris_shuffle">随机播放</string>
+    <string name="mpris_notification_settings_title">显示媒体控制通知</string>
+  <string name="mpris_notification_settings_summary">不打开 KDE Connect 也能在常驻通知中控制媒体播放器</string>
+  <string name="share_to">分享到…</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+  <string name="unreachable_device_url_share_text">URL 被分享到了不可访问的设备。它将在设备能够访问时自动传输到该设备。\n</string>
+    <string name="protocol_version_newer">此设备使用较新版本的协议</string>
+  <string name="plugin_settings_with_name">%s设置</string>
+    <string name="shareplugin_text_saved">已收到文本，存至剪贴板</string>
+    <string name="share_destination_folder_preference">目标目录</string>
+  <string name="share">分享</string>
+  <string name="share_received_file">分享 \"%s\"</string>
+    <string name="show_notification_if_screen_off">仅在屏幕关闭时发送通知</string>
+    <string name="add_device_hint">主机名或 IP 地址</string>
+  <string name="sftp_preference_configured_storage_locations">已配置存储位置</string>
+  <string name="sftp_preference_add_storage_location_title">添加存储位置</string>
+  <string name="sftp_preference_edit_storage_location">编辑存储位置</string>
+    <string name="sftp_storage_preference_storage_location_already_configured">位置已被配置</string>
+    <string name="sftp_storage_preference_display_name">显示名</string>
+  <string name="sftp_storage_preference_display_name_already_used">此显示名已被使用</string>
+  <string name="sftp_storage_preference_display_name_cannot_be_empty">显示名不能为空</string>
+  <string name="sftp_action_mode_menu_delete">删除</string>
+  <string name="sftp_no_storage_locations_configured">未配置存储位置</string>
+    <string name="sftp_manage_storage_permission_explanation">要允许远程访问此设备上的文件，您必须允许 KDE Connect 管理它的存储。</string>
+  <string name="sftp_missing_permission_error">缺少权限：文件系统访问</string>
+    <string name="use_digitizer">用作数位板</string>
+    <string name="block_notification_contents">屏蔽通知内容</string>
+  <string name="block_notification_images">屏蔽通知图像</string>
+  <string name="pairing_title">KDE Connect 设备</string>
+  <string name="pairing_description">其他在同一网络运行 KDE Connect 的设备会在此处显示。</string>
+    <string name="unreachable_description">此配对设备不可达。请确认它已经连接到与您相同的网络。</string>
+  <string name="no_wifi">您未连接到 Wi-Fi 网络，所以您可能无法看到任何设备。点击此处启用 Wi-Fi。</string>
+  <string name="on_non_trusted_message">不在信任的网络上：自动发现已被禁用。</string>
+    <string name="pref_plugin_telepathy">发送短消息</string>
+  <string name="pref_plugin_telepathy_desc">从桌面发送短消息</string>
+    <string name="findmyphone_title">找到我的手机</string>
+    <string name="findmyphone_description">让设备响铃从而找到它</string>
+  <string name="findmyphone_found">已发现</string>
+  <string name="open">打开</string>
+  <string name="close">关闭</string>
+    <string name="select_ringtone">选择铃声</string>
+  <string name="telephony_pref_blocked_title">已屏蔽的号码</string>
+    <string name="presenter_fullscreen">全屏</string>
+  <string name="presenter_exit">退出演示</string>
+    <string name="add_command">添加命令</string>
+  <string name="addcommand_explanation">没有已注册的命令</string>
+  <string name="addcommand_explanation2">您可以在 KDE Connect 系统设置中添加新命令</string>
+  <string name="add_command_description">您可以在桌面添加新命令</string>
+  <string name="pref_plugin_mprisreceiver">控制媒体播放器</string>
+  <string name="pref_plugin_mprisreceiver_desc">从其他设备控制您的手机的播放器</string>
+  <string name="notification_channel_default">其他通知</string>
+  <string name="notification_channel_persistent">持久性通知</string>
+  <string name="notification_channel_media_control">媒体控制</string>
+  <string name="notification_channel_filetransfer">正在传入的文件传输</string>
+  <string name="notification_channel_filetransfer_complete">传入文件传输完成</string>
+  <string name="notification_channel_filetransfer_upload">正在传出的文件传输</string>
+  <string name="notification_channel_filetransfer_error">文件传输出错</string>
+  <string name="notification_channel_high_priority">高优先级</string>
+    <string name="clipboard_toast">已复制到剪贴板</string>
+  <string name="runcommand_notreachable">设备不可达</string>
+  <string name="runcommand_notpaired">设备未配对</string>
+  <string name="runcommand_nosuchdevice">没有此设备</string>
+  <string name="runcommand_noruncommandplugin">此设备没有启用“运行命令插件”</string>
+    <string name="pref_plugin_findremotedevice">查找远程设备</string>
+  <string name="pref_plugin_findremotedevice_desc">让远程设备响铃</string>
+    <string name="pref_plugin_systemvolume">系统音量</string>
+  <string name="pref_plugin_systemvolume_desc">在远程设备上控制系统音量</string>
+    <string name="settings_rename">设备名</string>
+    <string name="settings_export_logs">导出 KDE Connect 日志</string>
+  <string name="settings_export_logs_text">生成一个包含程序执行信息的文件，有助于排查故障。</string>
+    <string name="privacy_options">隐私选项</string>
+    <string name="notification_channel_receivenotification">来自其他设备的通知</string>
+  <string name="findmyphone_preference_title_flashlight">闪烁手电筒</string>
+  <string name="no_app_for_opening">没有找到合适的应用程序打开此文件</string>
+  <string name="remote_keyboard_service">KDE Connect 远程键盘</string>
+  <string name="presenter_pointer">指针</string>
+    <string name="add_trusted_network">添加 %1s</string>
+    <string name="location_permission_needed_title">需要权限</string>
+    <string name="bigscreen_home">主页</string>
+  <string name="bigscreen_up">上</string>
+  <string name="bigscreen_left">下</string>
+  <string name="bigscreen_select">选择</string>
+  <string name="bigscreen_right">右</string>
+  <string name="bigscreen_down">下</string>
+  <string name="bigscreen_back">返回</string>
+  <string name="bigscreen_mic">麦克风</string>
+  <string name="pref_plugin_bigscreen">电视遥控器</string>
+    <string name="bigscreen_speech_extra_prompt">语音</string>
+    <string name="set_group_message_as_mms_title">群发彩信</string>
+  <string name="set_long_text_as_mms_title">将长文本以彩信形式发送</string>
+  <string name="convert_to_mms_after_title">转换为彩信</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>在1条消息后</item>
+    <item>在2条消息后</item>
+    <item>在3条消息后</item>
+    <item>在4条消息后</item>
+    <item>在5条消息后</item>
+  </string-array>
+  <string name="theme_dialog_title">选择主题</string>
+  <string-array name="theme_list">
+    <item>由省电模式设定</item>
+    <item>浅色主题</item>
+    <item>深色主题</item>
+  </string-array>
+    <string name="report_bug">报告缺陷</string>
+  <string name="donate">捐款</string>
+  <string name="source_code">源代码</string>
+  <string name="licenses">许可证</string>
+  <string name="website">网站</string>
+  <string name="about">关于</string>
+  <string name="authors">作者</string>
+    <string name="version">版本 %s</string>
+    <string name="click_here_to_type">轻触此处输入</string>
+    <string name="double_tap_to_drag">双击进行拖动</string>
+  <string name="hold_to_drag">按住进行拖动</string>
+    <string name="maintainer_and_developer">维护者和开发者</string>
+  <string name="developer">开发者</string>
+  <string name="apple_support">macOS 支持。iOS 支持功能正在开发</string>
+  <string name="bug_fixes_and_general_improvements">程序缺陷修正和常规改进</string>
+  <string name="samoilenko_yuri_task">SFTP 实现、程序缺陷修正和常规改进</string>
+  <string name="aniket_kumar_task">短消息插件改进</string>
+  <string name="alex_fiestas_task">联系人插件改进</string>
+  <string name="maxim_leshchenko_task">界面改进和此关于页面</string>
+  <string name="holger_kaelberer_task">远程键盘插件和程序缺陷修正</string>
+  <string name="saikrishna_arcot_task">支持在远程输入插件中使用键盘、程序缺陷修正和常规改进</string>
+  <string name="shellwen_chen_task">改进 SFTP 的安全性，改进此项目的可维护性，修复程序缺陷和常规改进</string>
+  <string name="everyone_else">以及多年来为 KDE Connect 作出过贡献的其他所有人</string>
+  <string name="send_clipboard">发送剪贴板</string>
+  <string name="tap_to_execute">轻触执行</string>
+    <string name="enable_bluetooth">启用蓝牙 (测试)</string>
+    <string name="findmyphone_camera_explanation">相机权限允许在查找手机时闪烁手电筒</string>
+    <string name="mpris_keepwatching">继续播放</string>
+  <string name="mpris_keepwatching_settings_title">继续播放</string>
+  <string name="mpris_keepwatching_settings_summary">关闭媒体后显示一条用于继续在此设备上播放的静音通知</string>
+  <string name="notification_channel_keepwatching">继续播放</string>
+  <string name="ping_result">Ping 的响应时间是 %1$d 毫秒</string>
+  <string name="ping_failed">无法 ping 设备</string>
+  <string name="ping_in_progress">正在执行 ping 命令…</string>
+    <string name="enable_fullscreen">启用全屏</string>
+  <string name="pref_presenter_enable_volume_keys_title">音量键切换幻灯片</string>
+  <string name="pref_presenter_sensitivity_title">指针灵敏度</string>
+  <string name="pref_presenter_enable_volume_keys_summary">待机控制在安卓 13 到 15 版之间不支持</string>
+  <string name="presenter_volume_keys_foreground_tip">您可以保持屏幕亮起以用音量键作为上一张/下一张幻灯片按钮</string>
+  <string name="presenter_volume_keys_tip">您可以保持屏幕亮起或锁定设备以用音量键作为上一张/下一张幻灯片按钮</string>
+</resources>

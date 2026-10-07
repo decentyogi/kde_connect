@@ -1,0 +1,312 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE Connect</string>
+  <string name="manifest_label_share">Poslano na napravo</string>
+  <string name="foreground_notification_no_devices">Ni povezan z nobeno napravo</string>
+  <string name="foreground_notification_devices">Povezan na: %s</string>
+  <string name="foreground_notification_send_clipboard">Pošlji odložišče</string>
+  <string name="pref_plugin_telephony">Obvestilnik telefona</string>
+  <string name="pref_plugin_telephony_desc">Pošlji obvestila o dohodnih klicih</string>
+  <string name="pref_plugin_battery">Poročilo o bateriji</string>
+  <string name="pref_plugin_battery_desc">Občasno poročaj o stanju baterije</string>
+  <string name="pref_plugin_connectivity_report">Poročilo o povezovanju</string>
+  <string name="pref_plugin_connectivity_report_desc">Poročilo moč signala omrežja in status</string>
+  <string name="pref_plugin_digitizer">Risalna tablica</string>
+  <string name="pref_plugin_digitizer_desc">Uporabite svojo napravo kot risalno tablico, občutljivo na pritisk</string>
+  <string name="pref_plugin_sftp">Dostop do datotečnega sistema</string>
+  <string name="pref_plugin_sftp_desc">Omogoča oddaljeno brskanje po sistemu datotek te naprave</string>
+  <string name="pref_plugin_clipboard">Uskladi odložišči</string>
+  <string name="pref_plugin_clipboard_desc">Deli skupno vsebino odložišča</string>
+  <string name="pref_plugin_clipboard_sent">Odložišče je poslano</string>
+  <string name="pref_plugin_mousepad">Oddaljeni vhod</string>
+  <string name="pref_plugin_mousepad_desc_nontv">Uporabi telefon ali tablični računalnik kot sledilno ploščico in tipkovnico</string>
+    <string name="pref_plugin_presenter">Oddaljena predstavitev</string>
+  <string name="pref_plugin_presenter_desc">S svojo napravo lahko menjate slike v predstavitvi</string>
+  <string name="pref_plugin_remotekeyboard">Sprejem oddaljenih pritiskov tipk</string>
+  <string name="pref_plugin_remotekeyboard_desc">Prejemanje dogodkov tipk od oddaljenih naprav</string>
+  <string name="pref_plugin_mpris">Upravljanje večpredstavnosti</string>
+  <string name="pref_plugin_mpris_desc">Omogoča daljinski upravljalnik za predvajalnik medijev</string>
+  <string name="pref_plugin_runcommand">Izvedi ukaz</string>
+  <string name="pref_plugin_runcommand_desc">S telefona ali tabličnega računalnika sprožate oddaljene ukaze</string>
+  <string name="pref_plugin_contacts">Usklajevalnik stikov</string>
+  <string name="pref_plugin_contacts_desc">Dovoli usklajevanje računalnikovega adresarja z imeni iz naprave</string>
+    <string name="pref_plugin_notifications">Usklajevanje obvestil</string>
+  <string name="pref_plugin_notifications_desc">Dostopajte do svojih obvestil iz drugih naprav</string>
+  <string name="pref_plugin_receive_notifications">Prejemaj obvestila</string>
+  <string name="pref_plugin_receive_notifications_desc">Prejemaj obvestila iz drugih naprav in jih prikazuj na Androidu</string>
+  <string name="pref_plugin_sharereceiver">Deli in prejemaj</string>
+  <string name="pref_plugin_sharereceiver_desc">Deli si datoteke in spletne naslove med napravami</string>
+  <string name="pref_plugin_inputdevicesreceiver">Deli vbhodne naprave</string>
+  <string name="pref_plugin_inputdevicesreceiver_desc">Deli miško in tipkovnico z oddaljeno napravo</string>
+  <string name="device_list_empty">Ni naprav</string>
+  <string name="ok">V redu</string>
+    <string name="cancel">Prekliči</string>
+  <string name="open_settings">Odpri nastavitve</string>
+  <string name="no_permissions">Za dostop do obvestil morate odobriti dovoljenje</string>
+    <string name="no_permissions_remotekeyboard">Za sprejem pritiskov tipk morate aktivirati oddaljeno tipkovnico KDE Connect</string>
+    <string name="open_mpris_controls">Upravljanje večpredstavnosti</string>
+    <string name="remotekeyboard_not_connected">Ni dejavne povezave z oddaljeno tipkovnico, vzpostavite jo v kdeconnectu</string>
+  <string name="remotekeyboard_connected">Povezava z oddaljeno tipkovnico je dejavna</string>
+  <string name="remotekeyboard_multiple_connections">Obstaja več kot ena povezava na oddaljeno tipkovnico, izberite napravo in nastavitve</string>
+  <string name="open_mousepad">Oddaljeni input</string>
+  <string name="open_mousepad_tv">TV daljinec</string>
+    <string name="mousepad_single_tap_settings_title">Nastavite akcijo tapkanja enega prsta</string>
+  <string name="mousepad_double_tap_settings_title">Nastavite akcijo tapkanja dveh prstov</string>
+  <string name="mousepad_triple_tap_settings_title">Nastavite akcijo tapkanja treh prstov</string>
+  <string name="mousepad_sensitivity_settings_title">Nastavi občutljivost drsne ploščice</string>
+  <string name="mousepad_mouse_buttons_title">Prikaži miškine gumbe</string>
+  <string name="mousepad_acceleration_profile_settings_title">Nastavi pospeške kazalca</string>
+  <string name="mousepad_scroll_direction_title">Smer povratnega drsenja</string>
+  <string name="mousepad_scroll_sensitivity_title">Občutljivost drsenja</string>
+  <string name="gyro_mouse_enabled_title">Omogoči žiroskopsko miško</string>
+  <string name="gyro_mouse_sensitivity_title">Občutljivost žiroskopa</string>
+    <string-array name="mousepad_tap_entries">
+    <item>Levi klik</item>
+    <item>Desni klik</item>
+    <item>Srednji klik</item>
+    <item>Nič</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>Najpočasneje</item>
+    <item>Neja nad najpočasnejšim</item>
+    <item>Privzeto</item>
+    <item>Nekaj nad privzetim</item>
+    <item>Najhitrejše</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>Brez pospeška</item>
+    <item>Najslabotnejše</item>
+    <item>Slabotno</item>
+    <item>Srednje</item>
+    <item>Močneje</item>
+    <item>Najmočnejše</item>
+  </string-array>
+    <string name="sendkeystrokes_pref_category_title">Pošlji pritiske tipk</string>
+  <string name="sendkeystrokes_pref_enabled">Omogoči pošiljanje pritiskov tipk</string>
+  <string name="sendkeystrokes_pref_enabled_summary">Poslušaj podatke z vrsto mime \'text/x-keystrokes\'</string>
+  <string name="sendkeystrokes_safe_text_enabled">Pošlji varno besedilo takoj</string>
+  <string name="sendkeystrokes_safe_text_enabled_summary">Pošlji kratke samo številčne niz brez potrditve</string>
+    <string name="mouse_receiver_plugin_description">Sprejemaj gibanje oddaljene miške</string>
+  <string name="mouse_receiver_plugin_name">Sprejemnik miške</string>
+  <string name="mouse_receiver_no_permissions">Če želite prejemati vnose dotikov na daljavo, morate podeliti dovoljenja za dostopnost za popoln nadzor vaše naprave</string>
+    <string name="category_connected_devices">Povezane naprave</string>
+  <string name="category_not_paired_devices">Naprave na voljo</string>
+    <string name="device_menu_unpair">Razkleni par</string>
+    <string name="unknown_sender">Neznani pošiljatelj</string>
+  <string name="error_not_reachable">Naprava ni dosegljiva</string>
+  <string name="error_already_paired">Naprava je že uparjena</string>
+  <string name="error_timed_out">Čas je potekel</string>
+  <string name="error_clocks_not_match">Ure naprave niso sinhronizirane</string>
+  <string name="error_canceled_by_user">Preklical uporabnik</string>
+  <string name="error_canceled_by_other_peer">Preklican od drugega vrstnika</string>
+    <string name="pair_requested">Zahtevan je par</string>
+    <plurals name="incoming_file_title">
+    <item quantity="one">Prejemanje %1$d datoteke od %2$s</item>
+    <item quantity="two">Prejemanje %1$d datotek od %2$s</item>
+    <item quantity="few">Prejemanje %1$d datotek od %2$s</item>
+    <item quantity="other">Prejemanje %1$d datotek od %2$s</item>
+  </plurals>
+  <plurals name="incoming_files_text">
+    <item quantity="one">(Datoteke %2$d od %3$d) : %1$s</item>
+    <item quantity="two">(Datoteka %2$d od %3$d) : %1$s</item>
+    <item quantity="few">(Datoteki %2$d od %3$d) : %1$s</item>
+    <item quantity="other">(Datoteke %2$d od %3$d) : %1$s</item>
+  </plurals>
+  <plurals name="outgoing_file_title">
+    <item quantity="one">Pošiljanje %1$d datotek na %2$s</item>
+    <item quantity="two">Pošiljanje %1$d datoteke na %2$s</item>
+    <item quantity="few">Pošiljanje %1$d datotek na %2$s</item>
+    <item quantity="other">Pošiljanje %1$d datotek na %2$s</item>
+  </plurals>
+  <plurals name="outgoing_files_text">
+    <item quantity="one">(Datoteka %2$d od %3$d) : %1$s</item>
+    <item quantity="two">(Datoteka %2$d od %3$d) : %1$s</item>
+    <item quantity="few">(Datoteka %2$d od %3$d) : %1$s</item>
+    <item quantity="other">(Datoteka %2$d od %3$d) : %1$s</item>
+  </plurals>
+  <plurals name="received_files_title">
+    <item quantity="one">Prejeta %2$d datoteka iz %1$s</item>
+    <item quantity="two">Prejeti %2$d datoteki iz %1$s</item>
+    <item quantity="few">Prejete %2$d datoteke iz %1$s</item>
+    <item quantity="other">Prejeto %2$d datotek iz %1$s</item>
+  </plurals>
+  <plurals name="received_files_fail_title">
+    <item quantity="one">Sprejemanje %2$d od %3$d datoteke od %1$s ni uspelo</item>
+    <item quantity="two">Sprejemanje %2$d od %3$d datotek od %1$s ni uspelo</item>
+    <item quantity="few">Sprejemanje %2$d od %3$d datotek od %1$s ni uspelo</item>
+    <item quantity="other">Sprejemanje %2$d od %3$d datotek od %1$s ni uspelo</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="one">Poslana %2$d datoteka na %1$s</item>
+    <item quantity="two">Poslani %2$d datoteki na %1$s</item>
+    <item quantity="few">Poslane %2$d datoteke na %1$s</item>
+    <item quantity="other">Poslano %2$d datotek na %1$s</item>
+  </plurals>
+  <plurals name="send_files_fail_title">
+    <item quantity="one">Pošiljanje %2$d od %3$d datoteke na %1$s ni uspelo</item>
+    <item quantity="two">Pošiljanje %2$d od %3$d datotek na %1$s ni uspelo</item>
+    <item quantity="few">Pošiljanje %2$d od %3$d datotek na %1$s ni uspelo</item>
+    <item quantity="other">Pošiljanje %2$d od %3$d datotek na %1$s ni uspelo</item>
+  </plurals>
+    <string name="received_file_text">Tapkaj, da odpreš \'%1s\'</string>
+  <string name="cannot_create_file">Ni mogoče ustvariti datoteke %s</string>
+    <string name="show_keyboard">Pokaži tipkovnico</string>
+    <string name="device_not_paired">Naprava ni uparjena</string>
+  <string name="pairing_duplicate_names">POZOR: Obstaja več naprav z istim imenom.</string>
+  <string name="request_pairing">Zahtevaj uparjanje</string>
+  <string name="pairing_accept">Sprejmi</string>
+  <string name="pairing_reject">Zavrni</string>
+  <string name="pairing_explanation">Uparjanje dveh naprav jim bo omogočilo dostop ene do druge. Uparjajte samo svoje lastne naprave.</string>
+  <string name="settings">Nastavitve</string>
+  <string name="mpris_play">Predvajaj</string>
+  <string name="mpris_pause">Premor</string>
+  <string name="mpris_previous">Prejšnji</string>
+  <string name="mpris_rew">Previj</string>
+  <string name="mpris_ff">Hitro previj naprej</string>
+  <string name="mpris_next">Naslednji</string>
+  <string name="mpris_loop">Zanka</string>
+  <string name="mpris_shuffle">Razmešaj</string>
+    <string name="mpris_notification_settings_title">Pokaži obvestilo o nadzoru medija</string>
+  <string name="mpris_notification_settings_summary">Dovoli nadzor nad predvajalniki medijev, ne da bi odprli KDE Connect</string>
+  <string name="share_to">Deli z…</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+  <string name="unreachable_device_url_share_text">URL-ji, ki so v skupni rabi z nedosegljivo napravo, ji bodo dostavljeni, ko postane dosegljiva.\n\n</string>
+    <string name="protocol_version_newer">Ta naprava uporablja novejšo različico protokola</string>
+  <string name="plugin_settings_with_name">Nastavitve %s</string>
+    <string name="shareplugin_text_saved">Prejeto besedilo shranjeno na odložišče</string>
+    <string name="share_destination_folder_preference">Ciljni imenik</string>
+  <string name="share">Deli</string>
+  <string name="share_received_file">Deli \"%s\"</string>
+    <string name="show_notification_if_screen_off">Pošlji obvestila le, če je zaslon izključen</string>
+    <string name="add_device_hint">Ime gostitelja ali naslov IP</string>
+  <string name="sftp_preference_configured_storage_locations">Nastavljene lokacije za shranjevanje</string>
+  <string name="sftp_preference_add_storage_location_title">Dodaj lokacijo za shranjevanje</string>
+  <string name="sftp_preference_edit_storage_location">Uredi lokacijo za shranjevanje</string>
+    <string name="sftp_storage_preference_storage_location_already_configured">Ta lokacija je že bila nastavljena</string>
+    <string name="sftp_storage_preference_display_name">Prikaži ime</string>
+  <string name="sftp_storage_preference_display_name_already_used">To ime je že uporabljeno</string>
+  <string name="sftp_storage_preference_display_name_cannot_be_empty">Ime ne sme biti prazno</string>
+  <string name="sftp_action_mode_menu_delete">Briši</string>
+  <string name="sftp_no_storage_locations_configured">Lokacije shranjevanja niso nastavljene</string>
+    <string name="sftp_manage_storage_permission_explanation">Da bi dovolili oddaljeni dostop do datotek na tej napravi, morate dovoliti, da KDE Connect upravlja s hrambo.</string>
+  <string name="sftp_missing_permission_error">Manjkajoča dovoljenja: dostop do datotečnega sistema</string>
+    <string name="use_digitizer">Uporabi kot risalno tablico</string>
+    <string name="block_notification_contents">Blokiraj vsebine obvestil</string>
+  <string name="block_notification_images">Blokiraj slike v obvestilih</string>
+  <string name="pairing_title">Naprave KDE Connect</string>
+  <string name="pairing_description">Tu bi se morale prikazati druge naprave, ki poganjajo KDE Connect v istem omrežju.</string>
+    <string name="unreachable_description">Ta uparjena naprava ni dosegljiva. Prepričajte se, da je povezana v isto omrežje.</string>
+  <string name="no_wifi">Niste povezani z omrežjem Wi-Fi, zato morda ne boste mogli videti nobene naprave. Kliknite tukaj, če želite omogočiti Wi-Fi.</string>
+  <string name="on_non_trusted_message">Ni v zaupanja vrednem omrežju: samodejno odkrivanje je onemogočeno.</string>
+    <string name="pref_plugin_telepathy">Pošlji SMS</string>
+  <string name="pref_plugin_telepathy_desc">Pošlji besedilna sporočila z namizja</string>
+    <string name="findmyphone_title">Poišči moj telefon</string>
+    <string name="findmyphone_description">Pozvoni na tej napravi, da jo lahko najdete</string>
+  <string name="findmyphone_found">Sem našel</string>
+  <string name="open">Odpri</string>
+  <string name="close">Zapri</string>
+    <string name="select_ringtone">Izberite melodijo zvonjenja</string>
+  <string name="telephony_pref_blocked_title">Blokirane številke</string>
+    <string name="presenter_fullscreen">Polni zaslon</string>
+  <string name="presenter_exit">Izhod iz predstavitve</string>
+    <string name="add_command">Dodaj ukaz</string>
+  <string name="addcommand_explanation">Nobenih ukazov ni registriranih</string>
+  <string name="addcommand_explanation2">Nove ukaze lahko dodate v sistemskih nastavitvah KDE Connect</string>
+  <string name="add_command_description">Ukaze lahko dodate na namizju</string>
+  <string name="pref_plugin_mprisreceiver">Nadzor predvajalnika medijev</string>
+  <string name="pref_plugin_mprisreceiver_desc">Upravljajte predstavnostne predvajalnike telefona iz druge naprave</string>
+  <string name="notification_channel_default">Ostala obvestila</string>
+  <string name="notification_channel_persistent">Trajni indikator</string>
+  <string name="notification_channel_media_control">Nadzor medija</string>
+  <string name="notification_channel_filetransfer">Prenos datotek sem</string>
+  <string name="notification_channel_filetransfer_complete">Prenos datotek sem dokončan</string>
+  <string name="notification_channel_filetransfer_upload">Prenos datotek tja</string>
+  <string name="notification_channel_filetransfer_error">Napaka pri prenosu datoteke</string>
+  <string name="notification_channel_high_priority">Visoka prednost</string>
+    <string name="clipboard_toast">Kopirano na odložišče</string>
+  <string name="runcommand_notreachable">Naprava ni dosegljiva</string>
+  <string name="runcommand_notpaired">Naprava ni uparjena</string>
+  <string name="runcommand_nosuchdevice">Ni take naprave</string>
+  <string name="runcommand_noruncommandplugin">Ta naprava nima omogočenega vtičnika za zagonski ukaz</string>
+    <string name="pref_plugin_findremotedevice">Najdi oddaljeno napravo</string>
+  <string name="pref_plugin_findremotedevice_desc">Zazvonite vašo oddaljeno napravo</string>
+    <string name="pref_plugin_systemvolume">Sistemska glasnost</string>
+  <string name="pref_plugin_systemvolume_desc">Nadzoruj sistemsko glasnost oddaljene naprave</string>
+    <string name="settings_rename">Ime naprave</string>
+    <string name="settings_export_logs">Izvozi dnevnike KDE Connect</string>
+  <string name="settings_export_logs_text">Ustvari datoteko z informacijami o izvajanju, ki lahko pomagajo pri odpravljanju težav.</string>
+    <string name="privacy_options">Možnosti zasebnosti</string>
+    <string name="notification_channel_receivenotification">Obvestila ostalih naprav</string>
+  <string name="findmyphone_preference_title_flashlight">Prižgi svetilko</string>
+  <string name="no_app_for_opening">Ni primerne aplikacije za odpiranje te datoteke</string>
+  <string name="remote_keyboard_service">Oddaljena tipkovnica KDE Connect</string>
+  <string name="presenter_pointer">Kazalec</string>
+    <string name="add_trusted_network">Dodaj %1s</string>
+    <string name="location_permission_needed_title">Zahtevano dovoljenje</string>
+    <string name="bigscreen_home">Domov</string>
+  <string name="bigscreen_up">Gor</string>
+  <string name="bigscreen_left">Levo</string>
+  <string name="bigscreen_select">Izberi</string>
+  <string name="bigscreen_right">Desno</string>
+  <string name="bigscreen_down">Dol</string>
+  <string name="bigscreen_back">Nazaj</string>
+  <string name="bigscreen_mic">Mikrofon</string>
+  <string name="pref_plugin_bigscreen">TV daljinec</string>
+    <string name="bigscreen_speech_extra_prompt">Govor</string>
+    <string name="set_group_message_as_mms_title">Pošlji skupinski SMS</string>
+  <string name="set_long_text_as_mms_title">Pošlji dolgo besedilo kot MMS</string>
+  <string name="convert_to_mms_after_title">Pretvori v MMS</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>Po enem sporočilu</item>
+    <item>Po dveh sporočilih</item>
+    <item>Po treh sporočilih</item>
+    <item>Po štirih sporočilih</item>
+    <item>Po petih sporočilih</item>
+  </string-array>
+  <string name="theme_dialog_title">Izberite temo</string>
+  <string-array name="theme_list">
+    <item>Določeno z ohranjevalnikom baterije</item>
+    <item>Svetlo</item>
+    <item>Temno</item>
+  </string-array>
+    <string name="report_bug">Poročaj o napaki</string>
+  <string name="donate">Doniraj</string>
+  <string name="source_code">Izvorna koda</string>
+  <string name="licenses">Licence</string>
+  <string name="website">Spletišče</string>
+  <string name="about">O programu</string>
+  <string name="authors">Avtorji</string>
+    <string name="version">Različica %s</string>
+    <string name="click_here_to_type">Tapkajte, tukaj za tipkanje</string>
+    <string name="double_tap_to_drag">Dvakrat tapnite za povlek</string>
+  <string name="hold_to_drag">Držite za povlek</string>
+    <string name="maintainer_and_developer">Vzdrževalec in razvijalec</string>
+  <string name="developer">Razvijalec</string>
+  <string name="apple_support">podpora za macOS. Delo na podpori za iOS</string>
+  <string name="bug_fixes_and_general_improvements">Popravki napak in splošne izboljšave</string>
+  <string name="samoilenko_yuri_task">Izvedba SFTP, popravki napak in splošne izboljšave</string>
+  <string name="aniket_kumar_task">Izboljšave vtičnika SMS</string>
+  <string name="alex_fiestas_task">Izboljšave vtičnika stikov</string>
+  <string name="maxim_leshchenko_task">Izboljšave uporabniškega vmesnika in ta stran o programu</string>
+  <string name="holger_kaelberer_task">Vtičnik za oddaljeno tipkovnico in popravki napak</string>
+  <string name="saikrishna_arcot_task">Podpora za uporabo tipkovnice vtičnika za oddaljen vnos, popravki napak in splošne izboljšave</string>
+  <string name="shellwen_chen_task">Izboljšanje varnosti SFTP, izboljšanje vzdržljivosti tega projekta, popravki napak in splošne izboljšave</string>
+  <string name="everyone_else">Vsi ostali, ki so prispevali za KDE Connect v letih razvoja</string>
+  <string name="send_clipboard">Pošlji odložišče</string>
+  <string name="tap_to_execute">Tapkajte za izvedbo</string>
+    <string name="enable_bluetooth">Omogoči bluetooth (beta)</string>
+    <string name="findmyphone_camera_explanation">Dovoljenje za kamero omogoča, da svetilka utripa, ko iščete telefon</string>
+    <string name="mpris_keepwatching">Nadaljuj s predvajanjem</string>
+  <string name="mpris_keepwatching_settings_title">Nadaljuj s predvajanjem</string>
+  <string name="mpris_keepwatching_settings_summary">Pokaži tiho obvestilo za nadaljevanje predvajanja v tej napravi po zaprtju predstavnosti</string>
+  <string name="notification_channel_keepwatching">Nadaljuj s predvajanjem</string>
+  <string name="ping_result">Ping-an v %1$d milisekundah</string>
+  <string name="ping_failed">Ni bilo mogoče pingati naprave</string>
+  <string name="ping_in_progress">Pinganje…</string>
+    <string name="enable_fullscreen">Omogoči celotni zaslon</string>
+  <string name="pref_presenter_enable_volume_keys_title">Tipke za glasnost zamenjujejo slike</string>
+  <string name="pref_presenter_sensitivity_title">Občutljivost kazalca</string>
+  <string name="pref_presenter_enable_volume_keys_summary">V stanju pripravljenosti ni podprto v različicah Androida med 13 in 15</string>
+  <string name="presenter_volume_keys_foreground_tip">Zaslon lahko pustite vklopljen, če želite s tipkama za glasnost preskočiti na prejšnjo/naslednjo sliko</string>
+  <string name="presenter_volume_keys_tip">Zaslon lahko pustite vklopljen ali zaklenete napravo, da se s tipkama za glasnost premaknete na prejšnjo/naslednjo sliko</string>
+</resources>

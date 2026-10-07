@@ -1,0 +1,287 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE Connect</string>
+  <string name="manifest_label_share">Send til eining</string>
+  <string name="foreground_notification_no_devices">Ikkje tilkopla ei eining</string>
+  <string name="foreground_notification_devices">Kopla til: %s</string>
+  <string name="foreground_notification_send_clipboard">Send utklippstavle</string>
+  <string name="pref_plugin_telephony">Telefonvarsling</string>
+  <string name="pref_plugin_telephony_desc">Send varsling ved oppringing</string>
+  <string name="pref_plugin_battery">Batterirapport</string>
+  <string name="pref_plugin_battery_desc">Meld regelmessig frå om batteristatusen</string>
+  <string name="pref_plugin_connectivity_report">Sambandsrapport</string>
+  <string name="pref_plugin_connectivity_report_desc">Rapporter signalstyrke og status for nettverket</string>
+  <string name="pref_plugin_digitizer">Teikneplate</string>
+  <string name="pref_plugin_digitizer_desc">Bruk eininga som ei trykkfølsam teikneplate</string>
+  <string name="pref_plugin_sftp">Filsystem-tilgang</string>
+  <string name="pref_plugin_sftp_desc">Tillat lesing av filsystemet frå datamaskina</string>
+  <string name="pref_plugin_clipboard">Synkroniser utklippstavle</string>
+  <string name="pref_plugin_clipboard_desc">Del innhaldet på utklippstavla</string>
+  <string name="pref_plugin_clipboard_sent">Utklippstavle send</string>
+  <string name="pref_plugin_mousepad">Fjernstyring</string>
+  <string name="pref_plugin_mousepad_desc_nontv">Bruk telefonen eller nettbrettet som styreplate og tastatur</string>
+    <string name="pref_plugin_presenter">Fjernkontroll av presentasjon</string>
+  <string name="pref_plugin_presenter_desc">Bruk eininga til å byta lysbilete i presentasjonar</string>
+  <string name="pref_plugin_remotekeyboard">Ta imot eksterne tastetrykk</string>
+  <string name="pref_plugin_remotekeyboard_desc">Ta imot tastetrykk frå eksterne einingar</string>
+  <string name="pref_plugin_mpris">Mediekontrollar</string>
+  <string name="pref_plugin_mpris_desc">Gje fjernkontroll til mediespelarar</string>
+  <string name="pref_plugin_runcommand">Køyr kommando</string>
+  <string name="pref_plugin_runcommand_desc">Utløys fjernkommandoar frå telefonen eller nettbrettet</string>
+  <string name="pref_plugin_contacts">Kontaktsynkronisering</string>
+  <string name="pref_plugin_contacts_desc">Tillat synkronisering av adresseboka på eininga</string>
+    <string name="pref_plugin_notifications">Synkroniser varslingar</string>
+  <string name="pref_plugin_notifications_desc">Få tilgang til varslingar frå andre einingar</string>
+  <string name="pref_plugin_receive_notifications">Ta imot varslingar</string>
+  <string name="pref_plugin_receive_notifications_desc">Ta imot varslingar frå den andre eininga og vis dei i Android</string>
+  <string name="pref_plugin_sharereceiver">Del og ta imot</string>
+  <string name="pref_plugin_sharereceiver_desc">Del filer og nettadresser mellom einingar</string>
+  <string name="pref_plugin_inputdevicesreceiver">Del inneiningar</string>
+  <string name="pref_plugin_inputdevicesreceiver_desc">Del mus og tastatur med ekstern eining</string>
+  <string name="device_list_empty">Ingen einingar</string>
+  <string name="ok">OK</string>
+    <string name="cancel">Avbryt</string>
+  <string name="open_settings">Opna innstillingar</string>
+  <string name="no_permissions">Du må gje tilgang til lesing av varslingar</string>
+    <string name="no_permissions_remotekeyboard">For å ta imot tastetrykk må du slå på fjerntastaturet i KDE Connect</string>
+    <string name="open_mpris_controls">Mediekontroll</string>
+    <string name="remotekeyboard_not_connected">Det finst ikkje noko verksamt tastatursamband (må setjast opp i KDE Connect)</string>
+  <string name="remotekeyboard_connected">Eksternt tastatursamband er verksamt</string>
+  <string name="remotekeyboard_multiple_connections">Det finst meir enn eitt eksternt tastatursamband (vel eining å setja opp)</string>
+  <string name="open_mousepad">Fjernstyring</string>
+  <string name="open_mousepad_tv">TV-fjernkontroll</string>
+    <string name="mousepad_single_tap_settings_title">Vel handling for éinfingertrykk</string>
+  <string name="mousepad_double_tap_settings_title">Vel handling for tofingertrykk</string>
+  <string name="mousepad_triple_tap_settings_title">Vel handling for trefingertrykk</string>
+  <string name="mousepad_sensitivity_settings_title">Vel følsemd for styreplate</string>
+  <string name="mousepad_mouse_buttons_title">Vis museknappar</string>
+  <string name="mousepad_acceleration_profile_settings_title">Vel peikarakselerasjon</string>
+  <string name="mousepad_scroll_direction_title">Omvend rulleretning</string>
+  <string name="mousepad_scroll_sensitivity_title">Rullefølsemd</string>
+  <string name="gyro_mouse_enabled_title">Slå på gyromus</string>
+  <string name="gyro_mouse_sensitivity_title">Gyroskop-følsemd</string>
+    <string-array name="mousepad_tap_entries">
+    <item>Venstreklikk</item>
+    <item>Høgreklikk</item>
+    <item>Midtklikk</item>
+    <item>Ingenting</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>Saktast</item>
+    <item>Raskare enn saktast</item>
+    <item>Standard</item>
+    <item>Raskare enn standard</item>
+    <item>Raskast</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>Ingen akselerasjon</item>
+    <item>Svakast</item>
+    <item>Svakare</item>
+    <item>Middels</item>
+    <item>Sterkare</item>
+    <item>Sterkast</item>
+  </string-array>
+    <string name="sendkeystrokes_pref_category_title">Send tastetrykk</string>
+  <string name="sendkeystrokes_pref_enabled">Slå på sending av tastetrykk</string>
+  <string name="sendkeystrokes_pref_enabled_summary">Lytt etter data med MIME-typen «text/x-keystrokes»</string>
+  <string name="sendkeystrokes_safe_text_enabled">Send sikker tekst med ein gong</string>
+  <string name="sendkeystrokes_safe_text_enabled_summary">Send korte tekstar med berre siffer utan stadfesting</string>
+    <string name="mouse_receiver_plugin_description">Ta imot eksterne muserørsler</string>
+  <string name="mouse_receiver_plugin_name">Muserørsle-mottakar</string>
+  <string name="mouse_receiver_no_permissions">For å kunna ta imot trykk-data, må du gje tilgjenge­løyva for å styring av heile eininga</string>
+    <string name="category_connected_devices">Tilkopla einingar</string>
+  <string name="category_not_paired_devices">Tilgjengelege einingar</string>
+    <string name="device_menu_unpair">Løys paring</string>
+    <string name="unknown_sender">Ukjend avsendar</string>
+  <string name="error_not_reachable">Får ikkje kontakt med eininga</string>
+  <string name="error_already_paired">Eininga er alt para</string>
+  <string name="error_timed_out">Tidsavbrot</string>
+  <string name="error_clocks_not_match">Einingsklokkene er ikkje synkroniserte</string>
+  <string name="error_canceled_by_user">Avbroten av brukar</string>
+  <string name="error_canceled_by_other_peer">Avbroten av den andre eininga</string>
+    <string name="pair_requested">Paringsførespurnad</string>
+    <plurals name="incoming_file_title">
+    <item quantity="one">Fekk %1$d fil frå %2$s</item>
+    <item quantity="other">Fekk %1$d filer frå %2$s</item>
+  </plurals>
+  <plurals name="incoming_files_text">
+    <item quantity="one">Fil: %1s</item>
+    <item quantity="other">(Fil %2$d av %3$d): %1$s</item>
+  </plurals>
+  <plurals name="outgoing_file_title">
+    <item quantity="one">Sender %1$d fil til %2$s</item>
+    <item quantity="other">Sender %1$d filer til %2$s</item>
+  </plurals>
+  <plurals name="outgoing_files_text">
+    <item quantity="one">Fil: %1$s</item>
+    <item quantity="other">(Fil %2$d av %3$d): %1$s</item>
+  </plurals>
+  <plurals name="received_files_title">
+    <item quantity="one">Fekk fil frå %1$s</item>
+    <item quantity="other">Fekk %2$d filer frå %1$s</item>
+  </plurals>
+  <plurals name="received_files_fail_title">
+    <item quantity="one">Klarte ikkje ta imot fil frå %1$s</item>
+    <item quantity="other">Klarte ikkje ta imot %2$d av %3$d filer frå %1$s</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="one">Sende fil til %1$s</item>
+    <item quantity="other">Sende %2$d filer til %1$s</item>
+  </plurals>
+  <plurals name="send_files_fail_title">
+    <item quantity="one">Klarte ikkje senda fil til %1$s</item>
+    <item quantity="other">Klarte ikkje senda %2$d av %3$d filer til %1$s</item>
+  </plurals>
+    <string name="received_file_text">Trykk for å opna «%1s»</string>
+  <string name="cannot_create_file">Klarte ikkje oppretta fila %s</string>
+    <string name="show_keyboard">Vis tastatur</string>
+    <string name="device_not_paired">Eininga er ikkje para</string>
+  <string name="pairing_duplicate_names">Åtvaring: Det finst fleire einingar med same namn.</string>
+  <string name="request_pairing">Be om paring</string>
+  <string name="pairing_accept">Godta</string>
+  <string name="pairing_reject">Avvis</string>
+  <string name="pairing_explanation">Ved paring av einingar, gjev du dei tilgang til kvarandre. Berre par saman einingar som du sjølv eig.</string>
+  <string name="settings">Innstillingar</string>
+  <string name="mpris_play">Spel</string>
+  <string name="mpris_pause">Pause</string>
+  <string name="mpris_previous">Førre</string>
+  <string name="mpris_rew">Spol tilbake</string>
+  <string name="mpris_ff">Spol fram</string>
+  <string name="mpris_next">Neste</string>
+  <string name="mpris_loop">Repeter</string>
+  <string name="mpris_shuffle">Stokk om</string>
+    <string name="mpris_notification_settings_title">Vis varsling med avspelingskontrollar</string>
+  <string name="mpris_notification_settings_summary">Tillat å kontrollera mediespelarar utan å opna KDE Connect</string>
+  <string name="share_to">Del til …</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+  <string name="unreachable_device_url_share_text">Adresser delte til ei utilgjengeleg eining vert leverte når eininga vert tilgjengeleg att.\n\n</string>
+    <string name="protocol_version_newer">Denne eininga brukar ein nyare protokollversjon</string>
+  <string name="plugin_settings_with_name">%s-innstillingar</string>
+    <string name="shareplugin_text_saved">Fekk tekst, som vart lagra på utklippstavla</string>
+    <string name="share_destination_folder_preference">Målmappe</string>
+  <string name="share">Del</string>
+  <string name="share_received_file">Del «%s»</string>
+    <string name="show_notification_if_screen_off">Send berre varslingar dersom skjermen er av</string>
+    <string name="add_device_hint">Vertsnamn/IP-adresse</string>
+  <string name="sftp_preference_configured_storage_locations">Oppsette lagringsområde</string>
+  <string name="sftp_preference_add_storage_location_title">Legg til lagringsområde</string>
+  <string name="sftp_preference_edit_storage_location">Rediger lagringsområde</string>
+    <string name="sftp_storage_preference_storage_location_already_configured">Dette lagringsområdet er alt sett opp</string>
+    <string name="sftp_storage_preference_display_name">Visingsnamn</string>
+  <string name="sftp_storage_preference_display_name_already_used">Dette visingsnamnet er alt i bruk</string>
+  <string name="sftp_storage_preference_display_name_cannot_be_empty">Visiningsnamnet kan ikkje vera tomt</string>
+  <string name="sftp_action_mode_menu_delete">Slett</string>
+  <string name="sftp_no_storage_locations_configured">Ingen lagringsområde er sette opp</string>
+    <string name="sftp_manage_storage_permission_explanation">For fjerntilgang til filer på denne eininga må du gje KDE Connect tilgangsløyve til lagringsområdet.</string>
+  <string name="sftp_missing_permission_error">Manglar løyve: filsystem-tilgang</string>
+    <string name="use_digitizer">Bruk som teikneplate</string>
+    <string name="block_notification_contents">Blokker varslingsinnhald</string>
+  <string name="block_notification_images">Blokker varslingsbilete</string>
+  <string name="pairing_title">KDE Connect-einingar</string>
+  <string name="pairing_description">Andre einingar i nettverket som køyrer KDE Connect, vil dukka opp her.</string>
+    <string name="unreachable_description">Får ikkje kontakt med den para eininga. Sjå til at ho er kopla til same nettverk.</string>
+  <string name="no_wifi">Du er ikkje kopla til eit Wi-Fi-nettverk, så du vil ikkje kunna sjå nokon einingar. Trykk her for å slå på Wi-Fi.</string>
+  <string name="on_non_trusted_message">Ikkje på eit tiltrudd nettverk: autooppdaging er slått av.</string>
+    <string name="pref_plugin_telepathy">Send SMS</string>
+  <string name="pref_plugin_telepathy_desc">Send tekstmeldingar frå datamaskina</string>
+    <string name="findmyphone_title">Finn telefonen min</string>
+    <string name="findmyphone_description">Spel av lydsignal på eininga, slik at du lett kan finna ho</string>
+  <string name="findmyphone_found">Fann han</string>
+  <string name="open">Opna</string>
+  <string name="close">Lukk</string>
+    <string name="select_ringtone">Vel ringjetone</string>
+  <string name="telephony_pref_blocked_title">Blokkerte nummer</string>
+    <string name="presenter_fullscreen">Fullskjerm</string>
+  <string name="presenter_exit">Avslutt presentasjon</string>
+    <string name="add_command">Legg til kommando</string>
+  <string name="addcommand_explanation">Ingen kommandoar er registrerte</string>
+  <string name="addcommand_explanation2">Du kan leggja til nye kommandoar i systeminnstillingane til KDE Connect</string>
+  <string name="add_command_description">Du kan leggja til kommandoar på skrivebordet</string>
+  <string name="pref_plugin_mprisreceiver">Mediespelarkontrollar</string>
+  <string name="pref_plugin_mprisreceiver_desc">Kontroller mediespelarar på telefonen din frå ei anna eining</string>
+  <string name="notification_channel_default">Andre varslingar</string>
+  <string name="notification_channel_persistent">Evigvarande varsling</string>
+  <string name="notification_channel_media_control">Mediestyring</string>
+  <string name="notification_channel_filetransfer">Innkommande filoverføring</string>
+  <string name="notification_channel_filetransfer_complete">Innkommande filoverføring fullført</string>
+  <string name="notification_channel_filetransfer_upload">Utgåande filoverføring</string>
+  <string name="notification_channel_filetransfer_error">Feil ved filoverføring</string>
+  <string name="notification_channel_high_priority">Høg prioritet</string>
+    <string name="clipboard_toast">Kopiert til utklippstavla</string>
+  <string name="runcommand_notreachable">Får ikkje kontakt med eininga</string>
+  <string name="runcommand_notpaired">Eininga er ikkje para</string>
+  <string name="runcommand_nosuchdevice">Eininga finst ikkje</string>
+  <string name="runcommand_noruncommandplugin">Eininga har ikkje «Køyr kommando»-tillegget slått på</string>
+    <string name="pref_plugin_findremotedevice">Finn ekstern eining</string>
+  <string name="pref_plugin_findremotedevice_desc">Ring til ekstern eining</string>
+    <string name="pref_plugin_systemvolume">Systemlydstyrke</string>
+  <string name="pref_plugin_systemvolume_desc">Juster systemlydstyrken til ekstern eining</string>
+    <string name="settings_rename">Einingsnamn</string>
+    <string name="settings_export_logs">Eksporter KDE Connect-loggar</string>
+    <string name="privacy_options">Personverninstillingar</string>
+    <string name="notification_channel_receivenotification">Varslingar frå andre einingar</string>
+  <string name="no_app_for_opening">Fann ikkje nokon app som kan opna denne fila</string>
+  <string name="remote_keyboard_service">KDE Connect fjerntastatur</string>
+  <string name="presenter_pointer">Peikar</string>
+    <string name="add_trusted_network">Legg til %1s</string>
+    <string name="location_permission_needed_title">Krev utvida løyve</string>
+    <string name="bigscreen_home">Heim</string>
+  <string name="bigscreen_up">Opp</string>
+  <string name="bigscreen_left">Venstre</string>
+  <string name="bigscreen_select">Vel</string>
+  <string name="bigscreen_right">Høgre</string>
+  <string name="bigscreen_down">Ned</string>
+  <string name="bigscreen_back">Tilbake</string>
+  <string name="bigscreen_mic">Mikrofon</string>
+  <string name="pref_plugin_bigscreen">TV-fjernkontroll</string>
+    <string name="bigscreen_speech_extra_prompt">Tale</string>
+    <string name="set_group_message_as_mms_title">Send gruppe-MMS</string>
+  <string name="set_long_text_as_mms_title">Send lang tekst som MMS</string>
+  <string name="convert_to_mms_after_title">Gjer om til MMS</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>Etter éi melding</item>
+    <item>Etter to meldingar</item>
+    <item>Etter tre meldingar</item>
+    <item>Etter fire meldingar</item>
+    <item>Etter fem meldingar</item>
+  </string-array>
+  <string name="theme_dialog_title">Vel tema</string>
+  <string-array name="theme_list">
+    <item>Valt av straumsparar</item>
+    <item>Lyst</item>
+    <item>Mørkt</item>
+  </string-array>
+    <string name="report_bug">Meld frå om feil</string>
+  <string name="donate">Gje pengegåve</string>
+  <string name="source_code">Kjeldekode</string>
+  <string name="licenses">Lisensar</string>
+  <string name="website">Heimeside</string>
+  <string name="about">Om</string>
+  <string name="authors">Opphavspersonar</string>
+    <string name="version">Versjon %s</string>
+    <string name="click_here_to_type">Trykk her for å skriva</string>
+    <string name="double_tap_to_drag">Dobbelttrykk for å dra</string>
+  <string name="hold_to_drag">Hald for å dra</string>
+    <string name="maintainer_and_developer">Vedlikehaldar og utviklar</string>
+  <string name="developer">Utviklar</string>
+  <string name="apple_support">Støtte for macOS – arbeider med støtte for iOS</string>
+  <string name="bug_fixes_and_general_improvements">Feilrettingar og generelle forbetringar</string>
+  <string name="samoilenko_yuri_task">SFTP-implementering, feilrettingar og generelle forbetringar</string>
+  <string name="aniket_kumar_task">Forbetringar i SMS-tillegget</string>
+  <string name="alex_fiestas_task">Forbetringar i kontakt-tillegget</string>
+  <string name="maxim_leshchenko_task">Forbetringar av brukarflata og denne «om»-sida</string>
+  <string name="holger_kaelberer_task">Fjerntastatur-tillegget og feilrettingar</string>
+  <string name="saikrishna_arcot_task">Støtte for bruk av tastaturet i fjernstyrings­tillegget, feilrettingar og generelle forbetringar</string>
+  <string name="shellwen_chen_task">Forbetra tryggleiken til SFTP, gjort prosjektet lettare å vedlikehalda, feilrettingar og generelle forbetringar</string>
+  <string name="everyone_else">Alle andre som har hjelpt til med utviklinga av KDE Connect opp gjennom åra</string>
+  <string name="send_clipboard">Send utklippstavla</string>
+  <string name="tap_to_execute">Tapp for å utføra handlinga</string>
+    <string name="enable_bluetooth">Bruk Bluetooth (beta)</string>
+    <string name="mpris_keepwatching">Hald fram avspeling</string>
+  <string name="mpris_keepwatching_settings_title">Hald fram avspeling</string>
+  <string name="mpris_keepwatching_settings_summary">Vis ei stille varsling om framhald av medie­avspeling på eininga etter avspelingsstopp</string>
+  <string name="notification_channel_keepwatching">Hald fram avspeling</string>
+  <string name="ping_result">Pinga på %1$d millisekund</string>
+  <string name="ping_failed">Klarte ikkje pinga eininga</string>
+  <string name="ping_in_progress">Pingar …</string>
+</resources>

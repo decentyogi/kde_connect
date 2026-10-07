@@ -1,0 +1,124 @@
+package org.kde.kdeconnect.datastore
+
+import android.content.Context
+import android.net.Uri
+import android.os.Environment
+import android.provider.DocumentsContract
+import android.provider.Settings
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.booleanPreferencesKey
+import androidx.datastore.preferences.core.edit
+import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.stringPreferencesKey
+import androidx.datastore.preferences.preferencesDataStore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
+import org.kde.kdeconnect.ui.AppTheme
+
+class SettingsDataStore(private val context: Context) {
+
+    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
+    private val data get() = context.dataStore.data
+
+    val deviceName: Flow<String> = context.dataStore.data
+        .map { it[KEY_DEVICE_NAME] ?: Settings.Global.getString(context.contentResolver, Settings.Global.DEVICE_NAME) }
+        .distinctUntilChanged()
+
+    val theme: Flow<AppTheme> = context.dataStore.data
+        .map { preferences -> preferences[KEY_THEME]?.let { AppTheme.valueOf(it) } ?: AppTheme.Default }
+        .distinctUntilChanged()
+
+    val bluetoothEnabled: Flow<Boolean> = context.dataStore.data
+        .map { preferences -> preferences[KEY_BLUETOOTH_ENABLED] ?: false }
+        .distinctUntilChanged()
+
+    val deviceId: Flow<String> = context.dataStore.data
+        .map { preferences -> preferences[KEY_DEVICE_ID] ?: "" }
+        .distinctUntilChanged()
+
+    val fileDestination: Flow<String> = context.dataStore.data
+        .map { preferences -> preferences[FILE_DESTINATION] ?: getDefaultDestinationUri().toString() }
+        .distinctUntilChanged()
+
+    val isFileDestinationDefault: Flow<Boolean> = fileDestination.map { it == getDefaultDestinationUri().toString() }
+
+    val presenterVolumeKeysEnabled: Flow<Boolean> = context.dataStore.data
+        .map { it[KEY_PRESENTER_VOLUME_KEYS] ?: true }
+        .distinctUntilChanged()
+
+    val presenterSensitivity: Flow<Int> = context.dataStore.data
+        .map { it[KEY_PRESENTER_SENSITIVITY] ?: 50 }
+        .distinctUntilChanged()
+
+    val certificate: Flow<String> = context.dataStore.data
+        .map { it[KEY_CERTIFICATE] ?: "" }
+        .distinctUntilChanged()
+
+    val blur: Flow<Boolean> = data.map { prefs -> prefs[BLUR] ?: true }.distinctUntilChanged()
+
+
+    suspend fun setDeviceName(name: String) {
+        context.dataStore.edit { preferences ->
+            preferences[KEY_DEVICE_NAME] = name
+        }
+    }
+
+    suspend fun setTheme(theme: AppTheme) {
+        context.dataStore.edit { preferences ->
+            preferences[KEY_THEME] = theme.name
+        }
+    }
+
+    suspend fun setBluetoothEnabled(enabled: Boolean) {
+        context.dataStore.edit { preferences ->
+            preferences[KEY_BLUETOOTH_ENABLED] = enabled
+        }
+    }
+
+    suspend fun setDeviceId(id: String) {
+        context.dataStore.edit { preferences ->
+            preferences[KEY_DEVICE_ID] = id
+        }
+    }
+
+    suspend fun setFileDestination(uri: String) {
+        context.dataStore.edit { preferences ->
+            preferences[FILE_DESTINATION] = uri
+        }
+    }
+
+    suspend fun setPresenterVolumeKeysEnabled(enabled: Boolean) {
+        context.dataStore.edit { it[KEY_PRESENTER_VOLUME_KEYS] = enabled }
+    }
+
+    suspend fun setPresenterSensitivity(sensitivity: Int) {
+        context.dataStore.edit { it[KEY_PRESENTER_SENSITIVITY] = sensitivity }
+    }
+
+    suspend fun setCertificate(certificate: String) {
+        context.dataStore.edit { it[KEY_CERTIFICATE] = certificate }
+    }
+
+    suspend fun setBlur(value: Boolean) = context.dataStore.edit { it[BLUR] = value }
+
+    fun getDefaultDestinationUri(): Uri {
+        return DocumentsContract.buildTreeDocumentUri(
+            "com.android.externalstorage.documents",
+            "primary:${Environment.DIRECTORY_DOWNLOADS}"
+        )
+    }
+
+    companion object {
+        private val KEY_DEVICE_NAME = stringPreferencesKey("device_name_preference")
+        private val KEY_THEME = stringPreferencesKey("theme_pref")
+        private val KEY_BLUETOOTH_ENABLED = booleanPreferencesKey("bluetooth_enabled")
+        private val KEY_DEVICE_ID = stringPreferencesKey("device_id_preference")
+        private val FILE_DESTINATION = stringPreferencesKey("file_destination")
+        private val KEY_PRESENTER_VOLUME_KEYS = booleanPreferencesKey("pref_presenter_enable_volume_keys")
+        private val KEY_PRESENTER_SENSITIVITY = intPreferencesKey("pref_presenter_sensitivity")
+        private val KEY_CERTIFICATE = stringPreferencesKey("certificate")
+        private val BLUR = booleanPreferencesKey("blur")
+    }
+}

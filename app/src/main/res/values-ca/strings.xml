@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE Connect</string>
+  <string name="manifest_label_share">Envia a un dispositiu</string>
+  <string name="foreground_notification_no_devices">No està connectat a cap dispositiu</string>
+  <string name="foreground_notification_devices">Connectat a: %s</string>
+  <string name="foreground_notification_send_clipboard">Envia el porta-retalls</string>
+  <string name="pref_plugin_telephony">Notificador de telefonia</string>
+  <string name="pref_plugin_telephony_desc">Envia notificacions per a les trucades entrants</string>
+  <string name="pref_plugin_battery">Informe de bateria</string>
+  <string name="pref_plugin_battery_desc">Informa periòdicament sobre l\'estat de la bateria</string>
+  <string name="pref_plugin_connectivity_report">Informa de la connectivitat</string>
+  <string name="pref_plugin_connectivity_report_desc">Informar la intensitat i l\'estat del senyal de la xarxa</string>
+  <string name="pref_plugin_digitizer">Tauleta de dibuix</string>
+  <string name="pref_plugin_digitizer_desc">Useu el dispositiu com a una tauleta de dibuix sensible a la pressió</string>
+  <string name="pref_plugin_sftp">Accés al sistema de fitxers</string>
+  <string name="pref_plugin_sftp_desc">Permet navegar de forma remota pel sistema de fitxers del dispositiu</string>
+  <string name="pref_plugin_clipboard">Sincronitza el porta-retalls</string>
+  <string name="pref_plugin_clipboard_desc">Comparteix el contingut del porta-retalls</string>
+  <string name="pref_plugin_clipboard_sent">S\'ha enviat al porta-retalls</string>
+  <string name="pref_plugin_mousepad">Entrada remota</string>
+  <string name="pref_plugin_mousepad_desc_nontv">Useu el vostre telèfon o tauleta com un ratolí tàctil i un teclat</string>
+    <string name="pref_plugin_presenter">Presentació remota</string>
+  <string name="pref_plugin_presenter_desc">Usa el dispositiu per a canviar les diapositives d\'una presentació</string>
+  <string name="pref_plugin_remotekeyboard">Rep les pulsacions remotes de tecles</string>
+  <string name="pref_plugin_remotekeyboard_desc">Rep els esdeveniments de pulsacions de tecla des de dispositius remots</string>
+  <string name="pref_plugin_mpris">Controls multimèdia</string>
+  <string name="pref_plugin_mpris_desc">Proporciona un comandament a distància per al reproductor multimèdia</string>
+  <string name="pref_plugin_runcommand">Executa una ordre</string>
+  <string name="pref_plugin_runcommand_desc">Activa les ordres remotes des del telèfon o tauleta</string>
+  <string name="pref_plugin_contacts">Sincronitzador dels contactes</string>
+  <string name="pref_plugin_contacts_desc">Permet sincronitzar la llibreta de contactes del dispositiu</string>
+    <string name="pref_plugin_notifications">Sincronitza les notificacions</string>
+  <string name="pref_plugin_notifications_desc">Accedeix a les vostres notificacions des d\'altres dispositius</string>
+  <string name="pref_plugin_receive_notifications">Recepció de notificacions</string>
+  <string name="pref_plugin_receive_notifications_desc">Rep notificacions des d\'altres dispositius i mostrar-les a l\'Android</string>
+  <string name="pref_plugin_sharereceiver">Comparteix i rep</string>
+  <string name="pref_plugin_sharereceiver_desc">Comparteix els fitxers i URL entre els dispositius</string>
+  <string name="pref_plugin_inputdevicesreceiver">Comparteix els dispositius d\'entrada</string>
+  <string name="pref_plugin_inputdevicesreceiver_desc">Comparteix el ratolí i el teclat amb el dispositiu remot</string>
+  <string name="device_list_empty">No hi ha cap dispositiu</string>
+  <string name="ok">D\'acord</string>
+    <string name="cancel">Cancel·la</string>
+  <string name="open_settings">Obre l\'arranjament</string>
+  <string name="no_permissions">Us caldrà atorgar permís per a accedir a les notificacions</string>
+    <string name="no_permissions_remotekeyboard">Per a rebre les pulsacions de tecles, haureu d\'activar el teclat remot del KDE Connect</string>
+    <string name="open_mpris_controls">Control multimèdia</string>
+    <string name="remotekeyboard_not_connected">No hi ha cap connexió activa amb el teclat remot, establiu-ne una al kde-connect</string>
+  <string name="remotekeyboard_connected">La connexió amb el teclat remot està activa</string>
+  <string name="remotekeyboard_multiple_connections">Hi ha més d\'una connexió amb un teclat remot, seleccioneu el dispositiu per a configurar-lo</string>
+  <string name="open_mousepad">Entrada remota</string>
+  <string name="open_mousepad_tv">Comandament a distància de TV</string>
+    <string name="mousepad_single_tap_settings_title">Estableix l\'acció de tocar amb un dit</string>
+  <string name="mousepad_double_tap_settings_title">Estableix l\'acció de tocar amb dos dits</string>
+  <string name="mousepad_triple_tap_settings_title">Estableix l\'acció de tocar amb tres dits</string>
+  <string name="mousepad_sensitivity_settings_title">Estableix la sensibilitat del ratolí tàctil</string>
+  <string name="mousepad_mouse_buttons_title">Mostra els botons del ratolí</string>
+  <string name="mousepad_acceleration_profile_settings_title">Estableix l\'acceleració de l\'apuntador</string>
+  <string name="mousepad_scroll_direction_title">Inverteix la direcció del desplaçament</string>
+  <string name="mousepad_scroll_sensitivity_title">Sensibilitat del desplaçament</string>
+  <string name="gyro_mouse_enabled_title">Activa el ratolí giroscòpic</string>
+  <string name="gyro_mouse_sensitivity_title">Sensibilitat del giroscopi</string>
+    <string-array name="mousepad_tap_entries">
+    <item>Clic esquerre</item>
+    <item>Clic dret</item>
+    <item>Clic del mig</item>
+    <item>No fer res</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>La més lenta</item>
+    <item>Lenta</item>
+    <item>Predeterminada</item>
+    <item>Ràpida</item>
+    <item>La més ràpida</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>Sense acceleració</item>
+    <item>La més feble</item>
+    <item>Feble</item>
+    <item>Mitjana</item>
+    <item>Forta</item>
+    <item>La més forta</item>
+  </string-array>
+    <string name="sendkeystrokes_pref_category_title">Envia les pulsacions de tecla</string>
+  <string name="sendkeystrokes_pref_enabled">Activa l\'enviament de les pulsacions de tecla</string>
+  <string name="sendkeystrokes_pref_enabled_summary">Escolta per a les dades amb el tipus MIME «text/x-keystrokes»</string>
+  <string name="sendkeystrokes_safe_text_enabled">Envia immediatament un text segur</string>
+  <string name="sendkeystrokes_safe_text_enabled_summary">Només envia cadenes curtes numèriques sense confirmació</string>
+    <string name="mouse_receiver_plugin_description">Rep el moviment del ratolí remot</string>
+  <string name="mouse_receiver_plugin_name">Receptor del ratolí</string>
+  <string name="mouse_receiver_no_permissions">Per a rebre entrades tàctils remotament cal atorgar el permís d\'Accessibilitat a control complet del vostre dispositiu</string>
+    <string name="category_connected_devices">Dispositius connectats</string>
+  <string name="category_not_paired_devices">Dispositius disponibles</string>
+    <string name="device_menu_unpair">Desaparella</string>
+    <string name="unknown_sender">Remitent desconegut</string>
+  <string name="error_not_reachable">No es pot accedir al dispositiu</string>
+  <string name="error_already_paired">El dispositiu ja està aparellat</string>
+  <string name="error_timed_out">Ha excedit el temps</string>
+  <string name="error_clocks_not_match">Els rellotges dels dispositius no estan sincronitzats</string>
+  <string name="error_canceled_by_user">Cancel·lat per l\'usuari</string>
+  <string name="error_canceled_by_other_peer">Cancel·lat per l\'altre parell</string>
+    <string name="pair_requested">S\'ha demanat aparellar</string>
+    <plurals name="incoming_file_title">
+    <item quantity="one">S\'està rebent %1$d fitxer des de %2$s</item>
+    <item quantity="other">S\'estan rebent %1$d fitxers des de %2$s</item>
+  </plurals>
+  <plurals name="incoming_files_text">
+    <item quantity="one">Fitxer: %1s</item>
+    <item quantity="other">(Fitxer %2$d de %3$d): %1$s</item>
+  </plurals>
+  <plurals name="outgoing_file_title">
+    <item quantity="one">S\'està enviant el fitxer %1$d a %2$s</item>
+    <item quantity="other">S\'estan enviant els fitxers %1$d a %2$s</item>
+  </plurals>
+  <plurals name="outgoing_files_text">
+    <item quantity="one">Fitxer: %1$s</item>
+    <item quantity="other">(Fitxer %2$d de %3$d): %1$s</item>
+  </plurals>
+  <plurals name="received_files_title">
+    <item quantity="one">S\'ha rebut un fitxer des de %1$s</item>
+    <item quantity="other">S\'han rebut %2$d fitxers des de %1$s</item>
+  </plurals>
+  <plurals name="received_files_fail_title">
+    <item quantity="one">Ha fallat en rebre un fitxer des de %1$s</item>
+    <item quantity="other">Ha fallat en rebre %2$d de %3$d fitxers des de %1$s</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="one">Fitxer enviat a %1$s</item>
+    <item quantity="other">%2$d fitxers enviats a %1$s</item>
+  </plurals>
+  <plurals name="send_files_fail_title">
+    <item quantity="one">Ha fallat en enviar el fitxer a %1$s</item>
+    <item quantity="other">Ha fallat en enviar %2$d de %3$d fitxers a %1$s</item>
+  </plurals>
+    <string name="received_file_text">Toqueu per a obrir «%1s»</string>
+  <string name="cannot_create_file">No s\'ha pogut crear el fitxer %s</string>
+    <string name="show_keyboard">Mostra el teclat</string>
+    <string name="device_not_paired">El dispositiu no està aparellat</string>
+  <string name="pairing_duplicate_names">Precaució: hi ha diversos dispositius amb el mateix nom.</string>
+  <string name="request_pairing">Demana aparellar</string>
+  <string name="pairing_accept">Accepta</string>
+  <string name="pairing_reject">Rebutja</string>
+  <string name="pairing_explanation">L\'aparellament de dos dispositius els donarà accés l\'un a l\'altre. Només aparelleu els vostres propis dispositius.</string>
+  <string name="settings">Arranjament</string>
+  <string name="mpris_play">Reprodueix</string>
+  <string name="mpris_pause">Pausa</string>
+  <string name="mpris_previous">Anterior</string>
+  <string name="mpris_rew">Rebobina</string>
+  <string name="mpris_ff">Avanç ràpid</string>
+  <string name="mpris_next">Següent</string>
+  <string name="mpris_loop">Repetició</string>
+  <string name="mpris_shuffle">Mescla</string>
+    <string name="mpris_notification_settings_title">Mostra les notificacions dels reproductors</string>
+  <string name="mpris_notification_settings_summary">Permet controlar els reproductors multimèdia sense obrir el KDE Connect</string>
+  <string name="share_to">Comparteix amb…</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+  <string name="unreachable_device_url_share_text">Els URL compartits amb un dispositiu no accessible es lliuraran un cop s\'hi pugui accedir.\n\n</string>
+    <string name="protocol_version_newer">Aquest dispositiu usa una versió nova del protocol</string>
+  <string name="plugin_settings_with_name">Configuració del %s</string>
+    <string name="shareplugin_text_saved">S\'ha rebut text i s\'ha desat al porta-retalls</string>
+    <string name="share_destination_folder_preference">Directori de destinació</string>
+  <string name="share">Comparteix</string>
+  <string name="share_received_file">Comparteix «%s»</string>
+    <string name="show_notification_if_screen_off">Envia les notificacions només si la pantalla està apagada</string>
+    <string name="add_device_hint">Nom de la màquina o adreça IP</string>
+  <string name="sftp_preference_configured_storage_locations">Ubicacions d\'emmagatzematge configurades</string>
+  <string name="sftp_preference_add_storage_location_title">Afegeix una ubicació d\'emmagatzematge</string>
+  <string name="sftp_preference_edit_storage_location">Edita una ubicació d\'emmagatzematge</string>
+    <string name="sftp_storage_preference_storage_location_already_configured">Aquesta ubicació ja s\'ha configurat</string>
+    <string name="sftp_storage_preference_display_name">Nom a mostrar</string>
+  <string name="sftp_storage_preference_display_name_already_used">Aquest nom a mostrar ja està en ús</string>
+  <string name="sftp_storage_preference_display_name_cannot_be_empty">El nom a mostrar no pot estar buit</string>
+  <string name="sftp_action_mode_menu_delete">Suprimeix</string>
+  <string name="sftp_no_storage_locations_configured">No s\'ha configurat cap ubicació d\'emmagatzematge</string>
+    <string name="sftp_manage_storage_permission_explanation">Per a permetre l\'accés remot als fitxers d\'aquest dispositiu, haureu de permetre que el KDE Connect gestioni l\'emmagatzematge.</string>
+  <string name="sftp_missing_permission_error">Permisos que manquen: accés al sistema de fitxers</string>
+    <string name="use_digitizer">Ús com a tauleta de dibuix</string>
+    <string name="block_notification_contents">Bloca el contingut de les notificacions</string>
+  <string name="block_notification_images">Bloca les imatges de les notificacions</string>
+  <string name="pairing_title">Dispositius del KDE Connect</string>
+  <string name="pairing_description">Els altres dispositius que executin el KDE Connect a la mateixa xarxa han d\'aparèixer aquí.</string>
+    <string name="unreachable_description">Aquest dispositiu aparellat no és accessible. Assegureu-vos que està connectat a la mateixa xarxa.</string>
+  <string name="no_wifi">No esteu connectat a una xarxa Wi-Fi, per tant, no podreu veure cap dispositiu. Feu clic aquí per a activar la Wi-Fi.</string>
+  <string name="on_non_trusted_message">No és una xarxa de confiança: el descobriment automàtic està desactivat.</string>
+    <string name="pref_plugin_telepathy">Envia un SMS</string>
+  <string name="pref_plugin_telepathy_desc">Envia missatges de text des de l\'escriptori</string>
+    <string name="findmyphone_title">Troba el meu telèfon</string>
+    <string name="findmyphone_description">Fa sonar aquest dispositiu perquè el pugueu trobar</string>
+  <string name="findmyphone_found">S\'ha trobat</string>
+  <string name="open">Obre</string>
+  <string name="close">Tanca</string>
+    <string name="select_ringtone">Seleccioneu un to de la trucada</string>
+  <string name="telephony_pref_blocked_title">Nombres blocats</string>
+    <string name="presenter_fullscreen">Pantalla completa</string>
+  <string name="presenter_exit">Surt de la presentació</string>
+    <string name="add_command">Afegeix una ordre</string>
+  <string name="addcommand_explanation">No hi ha cap ordre registrada</string>
+  <string name="addcommand_explanation2">Podeu afegir ordres noves a l\'Arranjament del sistema del KDE Connect</string>
+  <string name="add_command_description">Podeu afegir ordres per a l\'escriptori</string>
+  <string name="pref_plugin_mprisreceiver">Control del reproductor multimèdia</string>
+  <string name="pref_plugin_mprisreceiver_desc">Controla els reproductors multimèdia del telèfon des d\'un altre dispositiu</string>
+  <string name="notification_channel_default">Altres notificacions</string>
+  <string name="notification_channel_persistent">Indicador de persistència</string>
+  <string name="notification_channel_media_control">Control multimèdia</string>
+  <string name="notification_channel_filetransfer">Transferència de fitxer entrant</string>
+  <string name="notification_channel_filetransfer_complete">S\'ha completat la transferència de fitxer entrant</string>
+  <string name="notification_channel_filetransfer_upload">Transferència de fitxer de sortida</string>
+  <string name="notification_channel_filetransfer_error">Error de transferència de fitxer</string>
+  <string name="notification_channel_high_priority">Prioritat alta</string>
+    <string name="clipboard_toast">Copiat al porta-retalls</string>
+  <string name="runcommand_notreachable">No es pot accedir al dispositiu</string>
+  <string name="runcommand_notpaired">El dispositiu no està aparellat</string>
+  <string name="runcommand_nosuchdevice">El dispositiu no existeix</string>
+  <string name="runcommand_noruncommandplugin">Aquest dispositiu no té activat el connector d\'executar ordres</string>
+    <string name="pref_plugin_findremotedevice">Cerca el dispositiu remot</string>
+  <string name="pref_plugin_findremotedevice_desc">Truca al dispositiu remot</string>
+    <string name="pref_plugin_systemvolume">Volum del sistema</string>
+  <string name="pref_plugin_systemvolume_desc">Controla el volum del sistema des del dispositiu remot</string>
+    <string name="settings_rename">Nom del dispositiu</string>
+    <string name="settings_export_logs">Exporta els registres del KDE Connect</string>
+  <string name="settings_export_logs_text">Genera un fitxer amb informació d\'execució que pot ajudar a resoldre problemes.</string>
+    <string name="privacy_options">Opcions de privadesa</string>
+    <string name="notification_channel_receivenotification">Notificacions des d\'altres dispositius</string>
+  <string name="findmyphone_preference_title_flashlight">Encén la llanterna</string>
+  <string name="no_app_for_opening">No s\'ha trobat cap aplicació adequada per a obrir aquest fitxer</string>
+  <string name="remote_keyboard_service">Teclat remot del KDE Connect</string>
+  <string name="presenter_pointer">Apuntador</string>
+    <string name="add_trusted_network">Afegeix %1s</string>
+    <string name="location_permission_needed_title">Es requereix permís</string>
+    <string name="bigscreen_home">Inici</string>
+  <string name="bigscreen_up">Amunt</string>
+  <string name="bigscreen_left">Esquerra</string>
+  <string name="bigscreen_select">Selecció</string>
+  <string name="bigscreen_right">Dreta</string>
+  <string name="bigscreen_down">Avall</string>
+  <string name="bigscreen_back">Enrere</string>
+  <string name="bigscreen_mic">Micròfon</string>
+  <string name="pref_plugin_bigscreen">Comandament a distància de TV</string>
+    <string name="bigscreen_speech_extra_prompt">Veu</string>
+    <string name="set_group_message_as_mms_title">Envia un MMS de grup</string>
+  <string name="set_long_text_as_mms_title">Envia un text llarg com a MMS</string>
+  <string name="convert_to_mms_after_title">Converteix a MMS</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>Després d\'un missatge</item>
+    <item>Després de dos missatges</item>
+    <item>Després de tres missatges</item>
+    <item>Després de quatre missatges</item>
+    <item>Després de cinc missatges</item>
+  </string-array>
+  <string name="theme_dialog_title">Trieu el tema</string>
+  <string-array name="theme_list">
+    <item>Establert per l\'estalvi de bateria</item>
+    <item>Clar</item>
+    <item>Fosc</item>
+  </string-array>
+    <string name="report_bug">Informeu d\'un error</string>
+  <string name="donate">Donació de diners</string>
+  <string name="source_code">Codi font</string>
+  <string name="licenses">Llicències</string>
+  <string name="website">Lloc web</string>
+  <string name="about">Quant al</string>
+  <string name="authors">Autors</string>
+    <string name="version">Versió %s</string>
+    <string name="click_here_to_type">Toqueu aquí per a teclejar</string>
+    <string name="double_tap_to_drag">Toc doble per a arrossegar</string>
+  <string name="hold_to_drag">Mantenir premut per a arrossegar</string>
+    <string name="maintainer_and_developer">Mantenidor i desenvolupador</string>
+  <string name="developer">Desenvolupador</string>
+  <string name="apple_support">Suport de macOS. Treballant en el suport d\'iOS</string>
+  <string name="bug_fixes_and_general_improvements">Esmenes d\'errors i millores generals</string>
+  <string name="samoilenko_yuri_task">Implementació d\'SFTP, esmenes d\'errors i millores generals</string>
+  <string name="aniket_kumar_task">Millores en el connector d\'SMS</string>
+  <string name="alex_fiestas_task">Millores en el connector de contactes</string>
+  <string name="maxim_leshchenko_task">Millores en la IU i ha creat aquesta pàgina</string>
+  <string name="holger_kaelberer_task">Connector de teclat remot i esmenes d\'errors</string>
+  <string name="saikrishna_arcot_task">Suport per a usar el teclat en el connector d\'entrada remota, esmenes d\'errors i millores generals</string>
+  <string name="shellwen_chen_task">Millorar la seguretat d\'SFTP, millorar les tasques de manteniment d\'aquest projecte, esmenes d\'errors i millores generals</string>
+  <string name="everyone_else">Tothom qui ha contribuït al KDE Connect al llarg dels anys</string>
+  <string name="send_clipboard">Envia el porta-retalls</string>
+  <string name="tap_to_execute">Toqueu per a executar</string>
+    <string name="enable_bluetooth">Activa el Bluetooth (beta)</string>
+    <string name="findmyphone_camera_explanation">El permís de càmera permet que la llanterna s\'encengui en cercar el telèfon</string>
+    <string name="mpris_keepwatching">Continua reproduint</string>
+  <string name="mpris_keepwatching_settings_title">Continua reproduint</string>
+  <string name="mpris_keepwatching_settings_summary">Mostra una notificació silenciosa per a continuar reproduint en aquest dispositiu després de tancar l\'element multimèdia</string>
+  <string name="notification_channel_keepwatching">Continua reproduint</string>
+  <string name="ping_result">S\'ha fet «ping» en %1$d mil·lisegons</string>
+  <string name="ping_failed">No s\'ha pogut fer «ping» al dispositiu</string>
+  <string name="ping_in_progress">S\'està fent «ping»…</string>
+    <string name="enable_fullscreen">Activa la pantalla completa</string>
+  <string name="pref_presenter_enable_volume_keys_title">Les tecles de volum canvien les dispositives</string>
+  <string name="pref_presenter_sensitivity_title">Sensibilitat del punter</string>
+  <string name="pref_presenter_enable_volume_keys_summary">En repòs no està implementat entre les versions 13 i 15 de l\'Android</string>
+  <string name="presenter_volume_keys_foreground_tip">Podeu deixar la pantalla activada i utilitzar les tecles de volum per anar a la diapositiva anterior/següent</string>
+  <string name="presenter_volume_keys_tip">Podeu deixar la pantalla activada o bloquejar el dispositiu i utilitzar les tecles de volum per anar a la diapositiva anterior/següent</string>
+</resources>

@@ -1,0 +1,95 @@
+/*
+ * SPDX-FileCopyrightText: 2024 TPJ Schikhof <kde@schikhof.eu>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+*/
+package org.kde.kdeconnect.helpers
+
+import android.Manifest
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.pm.PackageManager
+import android.net.wifi.SupplicantState
+import android.net.wifi.WifiManager
+import androidx.core.content.ContextCompat
+import co.touchlab.kermit.Logger
+import kotlinx.coroutines.channels.awaitClose
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.callbackFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.first
+import org.kde.kdeconnect.datastore.ConnectionsSettingsDataStore
+
+class TrustedNetworkHelper(
+    private val context: Context,
+    private val dataStore: ConnectionsSettingsDataStore
+) {
+    val hasPermissions: Boolean
+        get() = ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
+
+    /** @return The current SSID or null if it's not available for any reason */
+    private val currentSSID: String?
+        get() {
+            val wifiManager = ContextCompat.getSystemService(context.applicationContext, WifiManager::class.java) ?: return null
+            val wifiInfo = wifiManager.connectionInfo
+            if (wifiInfo.supplicantState != SupplicantState.COMPLETED) return null
+            val ssid = wifiInfo.ssid
+            return when {
+                ssid == null -> null
+                ssid.equals(NOT_AVAILABLE_SSID_RESULT, ignoreCase = true) -> {
+                    LoggerTagged.d { "Current SSID is unknown" }
+                    null
+                }
+                ssid.isBlank() -> null
+                else -> ssid.cleanSsid()
+            }
+        }
+
+    val currentSSIDFlow: Flow<String?> = callbackFlow {
+        val receiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                trySend(currentSSID)
+            }
+        }
+
+        val filter = IntentFilter().apply {
+            addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION)
+        }
+
+        ContextCompat.registerReceiver(context.applicationContext, receiver, filter, ContextCompat.RECEIVER_NOT_EXPORTED)
+
+        trySend(currentSSID)
+
+        awaitClose {
+            context.applicationContext.unregisterReceiver(receiver)
+        }
+    }.distinctUntilChanged()
+
+    val isTrustedNetwork: Flow<Boolean> =
+        combine(
+            dataStore.allNetworksAllowed,
+            dataStore.trustedNetworks,
+            currentSSIDFlow
+        ) { allNetworksAllowed, trustedNetworks, currentSSID ->
+            allNetworksAllowed || currentSSID in trustedNetworks
+        }
+
+    suspend fun getIsTrustedNetwork(): Boolean {
+        return dataStore.allNetworksAllowed.first() || this.currentSSID in dataStore.trustedNetworks.first()
+    }
+
+    private fun String.cleanSsid(): String {
+        return if (startsWith("\"") && endsWith("\"") && length >= 2) {
+            substring(1, length - 1)
+        } else {
+            this
+        }
+    }
+
+    companion object {
+        private const val NOT_AVAILABLE_SSID_RESULT = "<unknown ssid>"
+    }
+}

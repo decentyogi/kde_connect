@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE Connect</string>
+  <string name="manifest_label_share">Invia a dispositivo</string>
+  <string name="foreground_notification_no_devices">Non connectite a ulle dispositivo</string>
+  <string name="foreground_notification_devices">Connectite : %s</string>
+  <string name="foreground_notification_send_clipboard">Invia Area de transferentia</string>
+  <string name="pref_plugin_telephony">Notificator de telephonia</string>
+  <string name="pref_plugin_telephony_desc">Invia notificationes per appellos in arrivata</string>
+  <string name="pref_plugin_battery">Reporto de batteria</string>
+  <string name="pref_plugin_battery_desc">Periodicamente reporta stato de batteria</string>
+  <string name="pref_plugin_connectivity_report">Reporto de connectivitate</string>
+  <string name="pref_plugin_digitizer">Tabletta de Designar</string>
+  <string name="pref_plugin_digitizer_desc">Usa tu dispositivo como un tabletta de designar sensibile al pression</string>
+  <string name="pref_plugin_sftp">Accesso de systema de file</string>
+  <string name="pref_plugin_sftp_desc">Permitte navigar in le systema de file de iste dispositivo remotemente</string>
+  <string name="pref_plugin_clipboard">Sync de area de transferentia</string>
+  <string name="pref_plugin_clipboard_desc">Comparti le contento de area de transferentia</string>
+  <string name="pref_plugin_clipboard_sent">Area de transferentia inviate</string>
+  <string name="pref_plugin_mousepad">Entrata remote</string>
+  <string name="pref_plugin_presenter">Presentation Remote</string>
+  <string name="pref_plugin_presenter_desc">Usa tu dispositivo per cambiar diapositivas in un presentation</string>
+  <string name="pref_plugin_mpris">Controlos de Multimedia</string>
+  <string name="pref_plugin_runcommand">Executa commando</string>
+    <string name="pref_plugin_receive_notifications">Recipe notificationes</string>
+  <string name="pref_plugin_sharereceiver">Comparti e recipe</string>
+  <string name="pref_plugin_inputdevicesreceiver">"Comparti  dispositivos de entrata"</string>
+  <string name="pref_plugin_inputdevicesreceiver_desc">Comparti mus e claviero con le dispositivo remote</string>
+  <string name="ok">OK</string>
+    <string name="cancel">Cancella</string>
+  <string name="open_settings">Aperi Preferentias</string>
+    <string name="open_mpris_controls">Controlo mutimedia</string>
+  <string name="open_mousepad">Entrata remote</string>
+    <string-array name="mousepad_tap_entries">
+    <item>Click sinistre</item>
+    <item>Click dextere</item>
+    <item>Click in medio</item>
+    <item>Nihil</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>Slowest</item>
+    <item>Above Slowest</item>
+    <item>Predefinite</item>
+    <item>Above Default</item>
+    <item>le Plus veloce</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>No Acceleration</item>
+    <item>Weakest</item>
+    <item>Weaker</item>
+    <item>Medie</item>
+    <item>Stronger</item>
+    <item>Strongest</item>
+  </string-array>
+    <string name="category_connected_devices">Dispositivos connectite</string>
+  <string name="category_not_paired_devices">Dispositivos disponibile</string>
+    <string name="device_menu_unpair">De-Associa</string>
+    <string name="error_not_reachable">Dispositivo non attingibile</string>
+  <string name="error_timed_out">Expirate</string>
+  <string name="error_clocks_not_match">Horologios de dispositivo es foras de synchronisation</string>
+  <string name="error_canceled_by_other_peer">Cancellate per altere pare</string>
+  <string name="pair_requested">Coppiar requirite</string>
+    <plurals name="outgoing_file_title">
+    <item quantity="one">"Inviante file %1$d   a  %2$s"</item>
+    <item quantity="other">Invia %1$d files %2$s</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="one">"Inviate  file a %1$s"</item>
+    <item quantity="other">"Inviate %2$d  files a %1$s"</item>
+  </plurals>
+    <string name="show_keyboard">Monstra Claviero</string>
+    <string name="pairing_accept">Accepta</string>
+  <string name="pairing_reject">Rejecta</string>
+  <string name="settings">Preferentias</string>
+  <string name="mpris_play">Reproduce</string>
+  <string name="mpris_pause">Pausa</string>
+  <string name="mpris_previous">Precedente</string>
+  <string name="mpris_rew">Rebobina</string>
+  <string name="mpris_ff">Avantia velocemente</string>
+  <string name="mpris_next">Proxime</string>
+  <string name="mpris_loop">Anella</string>
+  <string name="mpris_shuffle">Shuffle (miscer)</string>
+    <string name="share_to">Comparti a…</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+    <string name="share">Comparti</string>
+  <string name="show_notification_if_screen_off">Invia notificationes si le schermo es extinguite</string>
+    <string name="add_device_hint">Nomine de hospite o adresse IP</string>
+    <string name="sftp_storage_preference_display_name">Nomine de monstrar</string>
+  <string name="sftp_action_mode_menu_delete">Dele</string>
+    <string name="block_notification_contents">Bloca contentos de notification</string>
+  <string name="block_notification_images">Bloca imagines de notification</string>
+    <string name="pref_plugin_telepathy">Invia SMS</string>
+    <string name="open">Aperi</string>
+  <string name="close">Claude</string>
+    <string name="presenter_fullscreen">Schermo plen</string>
+  <string name="notification_channel_media_control">Controlo de multimedia</string>
+  <string name="notification_channel_filetransfer">Transferimento de file in arrivata</string>
+  <string name="notification_channel_filetransfer_complete">Transferimento de file in arrivata complete</string>
+  <string name="notification_channel_filetransfer_upload">Transferimento de file in partita</string>
+  <string name="notification_channel_high_priority">Prioritate alte</string>
+    <string name="runcommand_notpaired">Dispositivo non es associate</string>
+    <string name="pref_plugin_systemvolume">Volumine de systema</string>
+    <string name="settings_rename">Nomine de dispositivo</string>
+    <string name="settings_export_logs">Exporta registros (log) de KDE Connect</string>
+    <string name="privacy_options">Optiones de confidentialitate</string>
+  <string name="presenter_pointer">Punctator</string>
+    <string name="add_trusted_network">Adde %1s</string>
+    <string name="location_permission_needed_title">Permission requirite</string>
+    <string name="bigscreen_home">Domo o initio</string>
+  <string name="bigscreen_up">In alto</string>
+  <string name="bigscreen_left">Sinistra</string>
+  <string name="bigscreen_select">Selige</string>
+  <string name="bigscreen_right">Dextera</string>
+  <string name="bigscreen_down">A basso</string>
+  <string name="bigscreen_back">Retro</string>
+  <string name="bigscreen_mic">Mic</string>
+  <string name="bigscreen_speech_extra_prompt">Voce</string>
+    <string name="set_group_message_as_mms_title">Invia MMS de gruppo</string>
+  <string name="convert_to_mms_after_title">"Converte  a MMS"</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>Post un message</item>
+    <item>Post duo messages</item>
+    <item>Post tres messages</item>
+    <item>Post quatro messages</item>
+    <item>POst cinque messages</item>
+  </string-array>
+  <string name="theme_dialog_title">Selige thema</string>
+  <string-array name="theme_list">
+    <item>Fixate per le sparnio de batteria</item>
+    <item>Legier</item>
+    <item>Obscur</item>
+  </string-array>
+    <string name="report_bug">Reporta Bug</string>
+  <string name="donate">Dona</string>
+  <string name="source_code">Codice fonte</string>
+  <string name="licenses">Licentias</string>
+  <string name="website">Sito Web</string>
+  <string name="about">A proposito</string>
+  <string name="authors">Autores</string>
+    <string name="version">Version %s</string>
+    <string name="click_here_to_type">Tocca hic pro typar</string>
+    <string name="maintainer_and_developer">Mantenitor e developpator</string>
+  <string name="developer">Disveloppator</string>
+  <string name="bug_fixes_and_general_improvements">Fixationes de bug e melioramentos general</string>
+  <string name="holger_kaelberer_task">Plugin de claviero remote e correctiones de falta</string>
+  <string name="everyone_else">Alcun altere qui ha contribuite a KDE Connect durante le annos</string>
+  <string name="send_clipboard">Invia Area de transferentia</string>
+  <string name="tap_to_execute">Toccaper executar</string>
+    <string name="mpris_keepwatching">"Continua a executar "</string>
+  <string name="mpris_keepwatching_settings_title">Continua a executar</string>
+  <string name="notification_channel_keepwatching">Continua a executar</string>
+  <string name="enable_fullscreen">Habilita Schermo plen</string>
+</resources>

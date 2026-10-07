@@ -1,0 +1,34 @@
+/*
+ * SPDX-FileCopyrightText: 2021 Maxim Leshchenko <cnmaks90@gmail.com>
+ *
+ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
+ */
+
+package org.kde.kdeconnect.plugins.clipboard
+
+import android.app.PendingIntent
+import android.content.Intent
+import android.service.quicksettings.TileService
+import androidx.core.service.quicksettings.PendingIntentActivityWrapper
+import androidx.core.service.quicksettings.TileServiceCompat
+import org.kde.kdeconnect.DeviceManager
+import org.koin.android.ext.android.inject
+
+class ClipboardTileService : TileService() {
+    private val deviceManager: DeviceManager by inject()
+
+    override fun onClick() {
+        super.onClick()
+
+        TileServiceCompat.startActivityAndCollapse(this, PendingIntentActivityWrapper(
+            this, 0, Intent(this, ClipboardFloatingActivity::class.java).apply {
+                flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                val ids = deviceManager.devices.value.values
+                    .filter { it.isReachable && it.isPaired }
+                    .map { it.deviceId }
+                    .toCollection(ArrayList())
+                putExtra("connectedDeviceIds", ids)
+            }, PendingIntent.FLAG_ONE_SHOT, true
+        ))
+    }
+}

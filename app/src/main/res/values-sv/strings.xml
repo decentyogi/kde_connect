@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+  <string name="kde_connect">KDE-anslut</string>
+  <string name="manifest_label_share">Skicka till apparat</string>
+  <string name="foreground_notification_no_devices">Inte ansluten till någon apparat</string>
+  <string name="foreground_notification_devices">Ansluten till: %s</string>
+  <string name="foreground_notification_send_clipboard">Skicka klippbordet</string>
+  <string name="pref_plugin_telephony">Telefonunderrättelser</string>
+  <string name="pref_plugin_telephony_desc">Skicka underrättelser för inkommande samtal</string>
+  <string name="pref_plugin_battery">Batterirapport</string>
+  <string name="pref_plugin_battery_desc">Rapportera periodiskt batteriets status</string>
+  <string name="pref_plugin_connectivity_report">Anslutningsrapport</string>
+  <string name="pref_plugin_connectivity_report_desc">Rapportera nätverkssignalstyrka och status</string>
+  <string name="pref_plugin_sftp">Filsystemåtkomst</string>
+  <string name="pref_plugin_sftp_desc">Gör det möjligt att bläddra i apparatens filsystem från annan apparat</string>
+  <string name="pref_plugin_clipboard">Synkronisera klippbord</string>
+  <string name="pref_plugin_clipboard_desc">Dela klippbordets innehåll</string>
+  <string name="pref_plugin_clipboard_sent">Klippbordet skickat</string>
+  <string name="pref_plugin_mousepad">Extern inmatning</string>
+  <string name="pref_plugin_mousepad_desc_nontv">Använd telefonen eller surfplattan som mus och tangentbord</string>
+    <string name="pref_plugin_presenter">Fjärrkontroll för presentation</string>
+  <string name="pref_plugin_presenter_desc">Använd apparaten för att byta bilder i en presentation</string>
+  <string name="pref_plugin_remotekeyboard">Ta emot externa tangentnedtryckningar</string>
+  <string name="pref_plugin_remotekeyboard_desc">Ta emot tangentnedtryckningar från externa apparater</string>
+  <string name="pref_plugin_mpris">Multimediakontroller</string>
+  <string name="pref_plugin_mpris_desc">Tillhandahåller en fjärrkontroll för mediaspelaren</string>
+  <string name="pref_plugin_runcommand">Kör kommando</string>
+  <string name="pref_plugin_runcommand_desc">Utlös fjärrkommandon från din telefon eller surfplatta</string>
+  <string name="pref_plugin_contacts">Kontaktsynkronisering</string>
+  <string name="pref_plugin_contacts_desc">Tillåt synkronisering av apparatens kontaktlista</string>
+    <string name="pref_plugin_notifications">Synkronisering av underrättelser</string>
+  <string name="pref_plugin_notifications_desc">Kom åt underrättelser från andra apparater</string>
+  <string name="pref_plugin_receive_notifications">Ta emot underrättelser</string>
+  <string name="pref_plugin_receive_notifications_desc">Ta emot underrättelser från andra apparater och visa dem på Android</string>
+  <string name="pref_plugin_sharereceiver">Dela och ta emot</string>
+  <string name="pref_plugin_sharereceiver_desc">Dela filer och webbadresser mellan apparater</string>
+  <string name="device_list_empty">Inga apparater</string>
+  <string name="ok">Ok</string>
+    <string name="cancel">Avbryt</string>
+  <string name="open_settings">Öppna inställningarna</string>
+  <string name="no_permissions">Du måste ge rättighet att komma åt underrättelser</string>
+    <string name="no_permissions_remotekeyboard">KDE-ansluts fjärrtangentbord måste aktiveras för att ta emot tangentnedtryckningar</string>
+    <string name="open_mpris_controls">Kontroll av multimedia</string>
+    <string name="remotekeyboard_not_connected">Det finns ingen aktiv anslutning till externt tangentbord, upprätta en i KDE-anslut</string>
+  <string name="remotekeyboard_connected">Anslutning till externt tangentbord är aktiv</string>
+  <string name="remotekeyboard_multiple_connections">Det finns mer än en anslutning till externt tangentbord, välj apparat att anpassa</string>
+  <string name="open_mousepad">Extern inmatning</string>
+    <string name="mousepad_single_tap_settings_title">Ställ in åtgärd vid en fingerberöring</string>
+  <string name="mousepad_double_tap_settings_title">Ställ in åtgärd vid två fingerberöringar</string>
+  <string name="mousepad_triple_tap_settings_title">Ställ in åtgärd vid tre fingerberöringar</string>
+  <string name="mousepad_sensitivity_settings_title">Ställ in tryckplattans känslighet</string>
+  <string name="mousepad_mouse_buttons_title">Visa musknappar</string>
+  <string name="mousepad_acceleration_profile_settings_title">Ställ in pekaracceleration</string>
+  <string name="mousepad_scroll_direction_title">Omvänd rullningsriktning</string>
+  <string name="mousepad_scroll_sensitivity_title">Rullningskänslighet</string>
+  <string name="gyro_mouse_enabled_title">Aktivera gyroskopisk mus</string>
+  <string name="gyro_mouse_sensitivity_title">Gyroskop-känslighet</string>
+    <string-array name="mousepad_tap_entries">
+    <item>Vänsterklick</item>
+    <item>Högerklick</item>
+    <item>Mittenklick</item>
+    <item>Ingenting</item>
+  </string-array>
+  <string-array name="mousepad_sensitivity_entries">
+    <item>Långsammaste</item>
+    <item>Ovanför långsammaste</item>
+    <item>Normal</item>
+    <item>Ovanför normal</item>
+    <item>Snabbaste</item>
+  </string-array>
+  <string-array name="mousepad_acceleration_profile_entries">
+    <item>Ingen acceleration</item>
+    <item>Minsta</item>
+    <item>Mindre</item>
+    <item>Medium</item>
+    <item>Större</item>
+    <item>Störst</item>
+  </string-array>
+    <string name="sendkeystrokes_pref_category_title">Skicka tangentnedtryckningar</string>
+  <string name="sendkeystrokes_pref_enabled">Aktivera skicka tangentnedtryckningar</string>
+  <string name="sendkeystrokes_pref_enabled_summary">Lyssna på data med Mime-typen \'text/x-keystrokes\'</string>
+  <string name="sendkeystrokes_safe_text_enabled">Skicka säker text omedelbart</string>
+  <string name="sendkeystrokes_safe_text_enabled_summary">Skicka bara korta numeriska strängar utan att bekräfta</string>
+    <string name="mouse_receiver_plugin_description">Ta emot externa musrörelser</string>
+  <string name="mouse_receiver_plugin_name">Musmottagare</string>
+  <string name="mouse_receiver_no_permissions">För att ta emot pekinmatning från en annan apparat måste du ge åtkomsträttighet att fullständigt kontrollera din apparat.</string>
+    <string name="category_connected_devices">Anslutna apparater</string>
+  <string name="category_not_paired_devices">Tillgängliga apparater</string>
+    <string name="device_menu_unpair">Ta bort parkoppling</string>
+    <string name="error_not_reachable">Apparaten kan inte nås</string>
+  <string name="error_already_paired">Apparat redan parkopplad</string>
+  <string name="error_timed_out">Tidsgräns överskriden</string>
+  <string name="error_clocks_not_match">Apparaternas klockor är inte synkroniserade</string>
+  <string name="error_canceled_by_user">Avbruten av användaren</string>
+  <string name="error_canceled_by_other_peer">Avbruten av motparten</string>
+    <string name="pair_requested">Parkoppling begärd</string>
+    <plurals name="incoming_file_title">
+    <item quantity="one">Tar emot %1$d fil från %2$s</item>
+    <item quantity="other">Tar emot %1$d filer från %2$s</item>
+  </plurals>
+  <plurals name="incoming_files_text">
+    <item quantity="one">Fil: %1s</item>
+    <item quantity="other">(Fil %2$d av %3$d) : %1$s</item>
+  </plurals>
+  <plurals name="outgoing_file_title">
+    <item quantity="one">Skickar %1$d fil till %2$s</item>
+    <item quantity="other">Skickar %1$d filer till %2$s</item>
+  </plurals>
+  <plurals name="outgoing_files_text">
+    <item quantity="one">Fil: %1$s</item>
+    <item quantity="other">(Fil %2$d av %3$d) : %1$s</item>
+  </plurals>
+  <plurals name="received_files_title">
+    <item quantity="one">Tog emot fil från %1$s</item>
+    <item quantity="other">Tog emot %2$d filer från %1$s</item>
+  </plurals>
+  <plurals name="received_files_fail_title">
+    <item quantity="one">Misslyckades ta emot fil från %1$s</item>
+    <item quantity="other">Misslyckades ta emot %2$d av %3$d filer från %1$s</item>
+  </plurals>
+  <plurals name="sent_files_title">
+    <item quantity="one">Skickade fil till %1$s</item>
+    <item quantity="other">Skickade %2$d filer till %1$s</item>
+  </plurals>
+  <plurals name="send_files_fail_title">
+    <item quantity="one">Misslyckades skicka fil till %1$s</item>
+    <item quantity="other">Misslyckades skicka %2$d av %3$d filer till %1$s</item>
+  </plurals>
+    <string name="received_file_text">Rör för att öppna \'%1s\'</string>
+  <string name="cannot_create_file">Kan inte skapa filen %s</string>
+    <string name="show_keyboard">Visa tangentbord</string>
+    <string name="device_not_paired">Apparat inte parkopplad</string>
+  <string name="pairing_duplicate_names">Varning: Det finns flera enheter med samma namn.</string>
+  <string name="request_pairing">Begär parkoppling</string>
+  <string name="pairing_accept">Acceptera</string>
+  <string name="pairing_reject">Avslå</string>
+  <string name="pairing_explanation">Parkoppling av två enheter ger dem tillgång till varandra. Parkoppla bara dina egna enheter.</string>
+  <string name="settings">Inställningar</string>
+  <string name="mpris_play">Spela</string>
+  <string name="mpris_pause">Paus</string>
+  <string name="mpris_previous">Föregående</string>
+  <string name="mpris_rew">Snabbspola bakåt</string>
+  <string name="mpris_ff">Snabbspola framåt</string>
+  <string name="mpris_next">Nästa</string>
+  <string name="mpris_loop">Upprepa</string>
+  <string name="mpris_shuffle">Blanda</string>
+    <string name="mpris_notification_settings_title">Visa underrättelser om mediastyrning</string>
+  <string name="mpris_notification_settings_summary">Tillåt att styra mediaspelare utan att KDE-anslut öppnas</string>
+  <string name="share_to">Dela med…</string>
+  <string name="unreachable_device_dynamic_shortcut">%s (✕)</string>
+  <string name="unreachable_device_url_share_text">Webbadress som delas med en apparat som inte kan nås levereras till den när den väl blir möjlig att nå.\n\n</string>
+    <string name="protocol_version_newer">Apparaten använder en nyare protokollversion</string>
+  <string name="plugin_settings_with_name">Inställningar av %s</string>
+    <string name="shareplugin_text_saved">Tog emot text, spara på klippbordet</string>
+    <string name="share_destination_folder_preference">Målkatalog</string>
+  <string name="share">Dela</string>
+  <string name="share_received_file">Dela \"%s\"</string>
+    <string name="show_notification_if_screen_off">Skicka bara underrättelser om skärmen är av</string>
+    <string name="add_device_hint">Värddatornamn eller IP-adress</string>
+  <string name="sftp_preference_configured_storage_locations">Anpassa lagringsplatser</string>
+  <string name="sftp_preference_add_storage_location_title">Lägg till lagringsplats</string>
+  <string name="sftp_preference_edit_storage_location">Redigera lagringsplats</string>
+    <string name="sftp_storage_preference_storage_location_already_configured">Platsen har redan ställts in</string>
+    <string name="sftp_storage_preference_display_name">Namn att visa</string>
+  <string name="sftp_storage_preference_display_name_already_used">Namn att visa används redan</string>
+  <string name="sftp_storage_preference_display_name_cannot_be_empty">Namn att visa kan inte vara tomt</string>
+  <string name="sftp_action_mode_menu_delete">Ta bort</string>
+  <string name="sftp_no_storage_locations_configured">Inga lagringsplatser inställda</string>
+    <string name="sftp_manage_storage_permission_explanation">För att tillåta åtkomst av filer på den här apparaten från en annan apparat måste du låta KDE-anslut hantera lagringsenheten.</string>
+  <string name="sftp_missing_permission_error">Rättigheter saknas: filsystemåtkomst</string>
+    <string name="block_notification_contents">Blockera underrättelseinnehåll</string>
+  <string name="block_notification_images">Blockera underrättelsebilder</string>
+  <string name="pairing_title">KDE-anslut apparater</string>
+  <string name="pairing_description">Andra apparater som kör KDE-anslut i samma nätverk ska synas här.</string>
+    <string name="unreachable_description">Den här parkopplade apparaten kan inte nås. Försäkra dig om att den är ansluten till samma nätverk.</string>
+  <string name="no_wifi">Du är inte ansluten till ett WIFI-nätverk, så du kanske inte kan se alla apparater. Klicka här för att aktivera WIFI.</string>
+  <string name="on_non_trusted_message">Använder inte ett pålitligt nätverk: automatisk upptäckt är inaktiverad.</string>
+    <string name="pref_plugin_telepathy">Skicka SMS</string>
+  <string name="pref_plugin_telepathy_desc">Skicka textmeddelanden från skrivbordet</string>
+    <string name="findmyphone_title">Hitta min telefon</string>
+    <string name="findmyphone_description">Ringer till apparaten så att du kan hitta den</string>
+  <string name="findmyphone_found">Hittade den</string>
+  <string name="open">Öppna</string>
+  <string name="close">Stäng</string>
+    <string name="select_ringtone">Välj en ringsignal</string>
+  <string name="telephony_pref_blocked_title">Blockerade nummer</string>
+    <string name="presenter_fullscreen">Fullskärm</string>
+  <string name="presenter_exit">Avsluta presentation</string>
+    <string name="add_command">Lägg till ett kommando</string>
+  <string name="addcommand_explanation">Det finns inga kommandon registrerade</string>
+  <string name="addcommand_explanation2">Du kan lägga till nya kommandon i KDE-ansluts systeminställningar</string>
+  <string name="add_command_description">Du kan lägga till kommandon på skrivbordet</string>
+  <string name="pref_plugin_mprisreceiver">Styrning av mediaspelare</string>
+  <string name="pref_plugin_mprisreceiver_desc">Styr telefonens mediaspelare från en annan apparat</string>
+  <string name="notification_channel_default">Andra underrättelser</string>
+  <string name="notification_channel_persistent">Permanent indikering</string>
+  <string name="notification_channel_media_control">Kontroll av media</string>
+  <string name="notification_channel_filetransfer">Inkommande filöverföring</string>
+  <string name="notification_channel_filetransfer_upload">Utgående filöverföring</string>
+  <string name="notification_channel_filetransfer_error">Filöverföringsfel</string>
+  <string name="notification_channel_high_priority">Hög prioritet</string>
+    <string name="clipboard_toast">Kopierad till klippbordet</string>
+  <string name="runcommand_notreachable">Apparaten kan inte nås</string>
+  <string name="runcommand_notpaired">Apparat inte parkopplad</string>
+  <string name="runcommand_nosuchdevice">Det finns ingen sådan apparat</string>
+  <string name="runcommand_noruncommandplugin">Apparaten har inte insticksprogrammet Kör kommando aktiverat</string>
+    <string name="pref_plugin_findremotedevice">Hitta extern apparat</string>
+  <string name="pref_plugin_findremotedevice_desc">Ring till extern apparat</string>
+    <string name="pref_plugin_systemvolume">Systemvolym</string>
+  <string name="pref_plugin_systemvolume_desc">Kontrollera systemvolymen för den externa apparaten</string>
+    <string name="settings_rename">Apparatnamn</string>
+    <string name="settings_export_logs">Exportera loggar från KDE anslut</string>
+  <string name="settings_export_logs_text">Generera en fil med körinformation som kan hjälpa till att felsöka problem.</string>
+    <string name="privacy_options">Integritetsalternativ</string>
+    <string name="notification_channel_receivenotification">Underrättelser från andra apparater</string>
+  <string name="no_app_for_opening">Inget lämpligt program hittades för att öppna filen</string>
+  <string name="remote_keyboard_service">KDE-anslut fjärrtangentbord</string>
+  <string name="presenter_pointer">Pekare</string>
+    <string name="add_trusted_network">Lägg till %1s</string>
+    <string name="location_permission_needed_title">Rättighet krävs</string>
+    <string name="bigscreen_home">Hem</string>
+  <string name="bigscreen_up">Uppåt</string>
+  <string name="bigscreen_left">Vänster</string>
+  <string name="bigscreen_select">Markera</string>
+  <string name="bigscreen_right">Höger</string>
+  <string name="bigscreen_down">Neråt</string>
+  <string name="bigscreen_back">Bakåt</string>
+  <string name="bigscreen_mic">Mikrofon</string>
+    <string name="bigscreen_speech_extra_prompt">Tal</string>
+    <string name="set_group_message_as_mms_title">Skicka grupp-MMS</string>
+  <string name="set_long_text_as_mms_title">Skicka lång text som MMS</string>
+  <string name="convert_to_mms_after_title">Konvertera till MMS</string>
+  <string-array name="convert_to_mms_after_entries">
+    <item>Efter ett meddelande</item>
+    <item>Efter två meddelanden</item>
+    <item>Efter tre meddelanden</item>
+    <item>Efter fyra meddelanden</item>
+    <item>Efter fem meddelanden</item>
+  </string-array>
+  <string name="theme_dialog_title">Välj tema</string>
+  <string-array name="theme_list">
+    <item>Inställt för att spara batteri</item>
+    <item>Ljus</item>
+    <item>Mörk</item>
+  </string-array>
+    <string name="report_bug">Rapportera fel</string>
+  <string name="donate">Ge ett bidrag</string>
+  <string name="source_code">Källkod</string>
+  <string name="licenses">Licenser</string>
+  <string name="website">Webbplats</string>
+  <string name="about">Om</string>
+  <string name="authors">Författare</string>
+    <string name="version">Version %s</string>
+    <string name="click_here_to_type">Rör här för att skriva</string>
+    <string name="double_tap_to_drag">Dubbeltryck för att dra</string>
+  <string name="hold_to_drag">Håll för att dra</string>
+    <string name="maintainer_and_developer">Underhåll och utvecklare</string>
+  <string name="developer">Utvecklare</string>
+  <string name="apple_support">Stöd för macOS, arbete på stöd för iOS</string>
+  <string name="bug_fixes_and_general_improvements">Felrättningar och allmänna förbättringar</string>
+  <string name="samoilenko_yuri_task">SFTP-implementering, felrättningar och allmänna förbättringar</string>
+  <string name="aniket_kumar_task">Förbättringar av SMS-insticksprogram</string>
+  <string name="alex_fiestas_task">Förbättringar av kontaktinsticksprogram</string>
+  <string name="maxim_leshchenko_task">Förbättringar av användargränssnitt och den här om-sidan</string>
+  <string name="holger_kaelberer_task">Insticksprogram för fjärrtangentbord och felrättningar</string>
+  <string name="saikrishna_arcot_task">Stöd för användning av tangentbordet i insticksprogrammet för fjärrinmatning, felrättningar och allmänna förbättringar</string>
+  <string name="shellwen_chen_task">Förbättra säkerheten för SFTP, förbättra projektets underhållbarhet, felrättningar och allmänna förbättringar</string>
+  <string name="everyone_else">Alla andra som har bidragit till KDE-anslut under alla år</string>
+  <string name="send_clipboard">Skicka klippbord</string>
+  <string name="tap_to_execute">Rör för att köra</string>
+    <string name="enable_bluetooth">Aktivera Blåtand (beta)</string>
+    <string name="mpris_keepwatching">Fortsätt spela</string>
+  <string name="mpris_keepwatching_settings_title">Fortsätt spela</string>
+  <string name="mpris_keepwatching_settings_summary">Visa en tyst underrättelse för att fortsätta spela på apparaten efter att media har stängts.</string>
+  <string name="notification_channel_keepwatching">Fortsätt spela</string>
+  <string name="ping_result">Skickade paket på %1$d millisekunder</string>
+  <string name="ping_failed">Kunde inte skicka paket till apparaten</string>
+  <string name="ping_in_progress">Skickar paket…</string>
+</resources>
