@@ -21,6 +21,9 @@ data object PairingKey : KdeConnectKey
 data object PermissionsScreenKey : KdeConnectKey
 
 @Serializable
+data object ClipboardManagerKey : KdeConnectKey
+
+@Serializable
 data object SettingsKey : KdeConnectKey
 @Serializable
 data object SavedDevicesKey : KdeConnectKey

@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.input.rememberTextFieldState
@@ -154,7 +155,7 @@ private fun NotificationBlacklistComponent(
                     apps = uiState.blacklistedApps,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(92.dp),
+                        .heightIn(min = 92.dp),
                     onLongClick = { packageName ->
                         showPrivacyDialogForAppPackageName = packageName
                     }
@@ -163,7 +164,7 @@ private fun NotificationBlacklistComponent(
                 }
                 Box(
                     Modifier
-                        .height(32.dp)
+                        .heightIn(min = 32.dp)
                         .fillMaxWidth()
                 ) {
                     HorizontalDivider(Modifier.align(Alignment.Center))
@@ -192,7 +193,7 @@ private fun NotificationBlacklistComponent(
                     apps = uiState.whitelistedApps,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(92.dp)
+                        .heightIn(min = 92.dp)
                 ) { packageName ->
                     viewModel.setAppBlacklisted(packageName, true)
                 }

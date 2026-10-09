@@ -1,6 +1,7 @@
 package org.kde.kdeconnect.ui.screen.settings.advanced.connections
 
 import android.Manifest
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedContent
@@ -15,6 +16,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.input.clearText
 import androidx.compose.foundation.text.input.rememberTextFieldState
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.InputChip
@@ -23,6 +25,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -62,6 +65,23 @@ private fun ManualDeviceComponent(
     viewModel: ConnectionsSettingsViewModel,
     uiState: ConnectionsSettingsUiState
 ) {
+    val context = LocalContext.current
+    val isScanning by viewModel.isScanningHotspot.collectAsStateWithLifecycle()
+
+    Preference(
+        title = stringResource(R.string.autodetect_hotspot_ip),
+        summary = if (isScanning) stringResource(R.string.hotspot_scanning) else stringResource(R.string.autodetect_hotspot_desc),
+        icon = painterResource(R.drawable.wifi),
+        onClick = {
+            if (!isScanning) {
+                Toast.makeText(context, R.string.hotspot_scanning, Toast.LENGTH_SHORT).show()
+                viewModel.autoDetectHotspotDevices(context) { message ->
+                    Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+                }
+            }
+        }
+    )
+
     val textFieldState = rememberTextFieldState()
     SettingsSearchBar(
         state = textFieldState,

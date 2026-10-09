@@ -15,8 +15,8 @@ object PermissionHelper {
             true
         }
         val hasOverlayPermission = Settings.canDrawOverlays(context)
-        val hasNetworkDevicesPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CINNAMON_BUN) {
-            ContextCompat.checkSelfPermission(context, Manifest.permission.ACCESS_LOCAL_NETWORK) == PackageManager.PERMISSION_GRANTED
+        val hasNetworkDevicesPermission = if (Build.VERSION.SDK_INT >= 37) {
+            ContextCompat.checkSelfPermission(context, "android.permission.ACCESS_LOCAL_NETWORK") == PackageManager.PERMISSION_GRANTED
         } else {
             true
         }

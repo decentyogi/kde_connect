@@ -11,7 +11,7 @@
         android:shortcutShortLabel="@string/quit_app_shortcut">
         <intent
             android:action="android.intent.action.VIEW"
-            android:targetPackage="com.leekleak.knot.debug"
+            android:targetPackage="com.leekleak.knot"
             android:targetClass="org.kde.kdeconnect.QuitActivity" />
     </shortcut>
 </shortcuts>

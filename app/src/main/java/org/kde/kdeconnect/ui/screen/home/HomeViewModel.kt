@@ -16,12 +16,17 @@ import org.kde.kdeconnect.BackgroundServiceData
 import org.kde.kdeconnect.DeviceManager
 import org.kde.kdeconnect.DeviceState
 import org.kde.kdeconnect.PairState
+import org.kde.kdeconnect.datastore.ConnectionsSettingsDataStore
+import org.kde.kdeconnect.helpers.CustomDevicesHelper
+import org.kde.kdeconnect.helpers.HotspotHelper
 import org.kde.kdeconnect.helpers.TrustedNetworkHelper
 
 class HomeViewModel(
     deviceManager: DeviceManager,
     backgroundServiceData: BackgroundServiceData,
     private val trustedNetworkHelper: TrustedNetworkHelper,
+    private val connectionsDataStore: ConnectionsSettingsDataStore,
+    private val customDevicesHelper: CustomDevicesHelper,
 ) : ViewModel() {
     private val refreshing = MutableStateFlow(false)
     val uiState = combine(
@@ -30,8 +35,9 @@ class HomeViewModel(
         trustedNetworkHelper.isTrustedNetwork,
         refreshing
     ) { isConnectedToNonCellularNetwork, devices, trustedNetwork,  refreshing ->
+        val localNetworkAvailable = isConnectedToNonCellularNetwork || HotspotHelper.getHotspotSubnets().isNotEmpty()
         HomeUiState(
-            wifiAvailable = isConnectedToNonCellularNetwork,
+            wifiAvailable = localNetworkAvailable,
             trustedNetwork = trustedNetwork,
             connected = devices.filter { it.isReachable && it.pairState == PairState.Paired },
             availableCount = devices.count { it.isReachable && it.pairState != PairState.Paired },
@@ -46,9 +52,11 @@ class HomeViewModel(
     fun onRefresh(context: Context) {
         refreshing.update { true }
 
-        forceRefreshConnections(context)
-
         viewModelScope.launch {
+            try {
+                HotspotHelper.autoDetectAndAddHotspotIps(context, connectionsDataStore, customDevicesHelper)
+            } catch (_: Exception) { }
+            forceRefreshConnections(context)
             delay(timeMillis = 1500)
             refreshing.update { false }
         }

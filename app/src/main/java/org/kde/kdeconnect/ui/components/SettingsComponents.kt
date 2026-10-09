@@ -26,6 +26,7 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -709,7 +710,7 @@ fun NotificationTogglePreference(
     }
     Box(
         modifier = modifier
-            .height(108.dp)
+            .heightIn(min = 108.dp)
             .clip(MaterialTheme.shapes.large)
             .background(backgroundColor)
             .border(1.5.dp, colorScheme.primary, MaterialTheme.shapes.large)

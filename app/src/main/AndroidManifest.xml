@@ -266,10 +266,23 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="org.kde.kdeconnect.plugins.share.SendFileActivity"
+            android:exported="false"
+            android:theme="@style/KdeConnectTheme.NoActionBar" />
+
         <receiver android:name="org.kde.kdeconnect.plugins.share.ShareBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="org.kde.kdeconnect.plugins.share.CancelShare" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="org.kde.kdeconnect.plugins.mousepad.SendKeystrokeReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="org.kde.kdeconnect.action.SEND_KEYSTROKE" />
             </intent-filter>
         </receiver>
 

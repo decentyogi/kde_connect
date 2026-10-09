@@ -193,6 +193,13 @@ class MainActivity : AppCompatActivity(), AndroidScopeComponent {
         BackgroundService.start(applicationContext)
     }
 
+    override fun onResume() {
+        super.onResume()
+        try {
+            org.kde.kdeconnect.plugins.clipboard.ClipboardListener.instance(applicationContext).onClipboardChanged()
+        } catch (_: Exception) { }
+    }
+
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {

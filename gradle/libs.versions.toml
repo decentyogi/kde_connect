@@ -1,6 +1,6 @@
 [versions]
 activityCompose = "1.13.0"
-androidGradlePlugin = "9.4.0"
+androidGradlePlugin = "9.1.1"
 androidSmsmms = "kdeconnect-1-21-0"
 appcompat = "1.8.0"
 bcpkixJdk18on = "1.86"

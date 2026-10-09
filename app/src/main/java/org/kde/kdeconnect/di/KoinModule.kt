@@ -45,6 +45,10 @@ import org.kde.kdeconnect.helpers.VideoUrlsHelper
 import org.kde.kdeconnect.helpers.security.SslHelper
 import org.kde.kdeconnect.plugins.battery.BatteryPlugin
 import org.kde.kdeconnect.plugins.clipboard.ClipboardPlugin
+import org.kde.kdeconnect.plugins.clipboard.history.ClipboardRepository
+import org.kde.kdeconnect.ui.screen.clipboard.ClipboardManagerScreen
+import org.kde.kdeconnect.ui.screen.clipboard.ClipboardManagerViewModel
+import org.kde.kdeconnect.ui.navigation.ClipboardManagerKey
 import org.kde.kdeconnect.plugins.connectivityreport.ConnectivityReportPlugin
 import org.kde.kdeconnect.plugins.contacts.ContactsPlugin
 import org.kde.kdeconnect.plugins.digitizer.DigitizerPlugin
@@ -162,8 +166,14 @@ val homeModule = module {
             onClick = { deviceId -> navigator.goTo(DeviceKey(deviceId, true)) },
             onRefresh = { viewModel.onRefresh(get()) },
             onNavigateToPairingScreen = { navigator.goTo(PairingKey) },
-            onNavigateToSettingsScreen = { navigator.goTo(SettingsKey) }
+            onNavigateToSettingsScreen = { navigator.goTo(SettingsKey) },
+            onNavigateToClipboardManagerScreen = { navigator.goTo(ClipboardManagerKey) }
         )
+    }
+    viewModel<ClipboardManagerViewModel>()
+    navigation<ClipboardManagerKey> {
+        val navigator: Navigator = get()
+        ClipboardManagerScreen(navigator = navigator)
     }
     viewModel<PairingViewModel>()
     navigation<PairingKey> {
@@ -395,6 +405,7 @@ val appModule = module {
     single<TrustedNetworkHelper>()
     single<PermissionRequestHelper>()
     single<AppDatabase>()
+    single { ClipboardRepository.getInstance(get()) }
 
     single<DevicesRoomDatabase> {
         Room.databaseBuilder(

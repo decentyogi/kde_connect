@@ -46,7 +46,8 @@ fun HomeScreen(
     onClick: (String) -> Unit,
     onRefresh: () -> Unit,
     onNavigateToPairingScreen: () -> Unit,
-    onNavigateToSettingsScreen: () -> Unit
+    onNavigateToSettingsScreen: () -> Unit,
+    onNavigateToClipboardManagerScreen: () -> Unit
 ) {
     val pullRefreshState = rememberPullToRefreshState()
 
@@ -102,6 +103,22 @@ fun HomeScreen(
                     wifiAvailable = uiState.wifiAvailable,
                     trustedNetwork = uiState.trustedNetwork
                 )
+            }
+            Box(
+                modifier = Modifier
+                    .align(Alignment.BottomStart)
+                    .systemBarsPadding()
+                    .padding(16.dp)
+            ) {
+                MediumFloatingActionButton(
+                    onClick = onNavigateToClipboardManagerScreen
+                ) {
+                    Icon(
+                        modifier = Modifier.size(36.dp),
+                        painter = painterResource(R.drawable.assignment),
+                        contentDescription = stringResource(R.string.clipboard_manager)
+                    )
+                }
             }
             Box(
                 modifier = Modifier
@@ -171,5 +188,6 @@ private fun PreviewCompose() {
         onRefresh = { },
         onNavigateToPairingScreen = {},
         onNavigateToSettingsScreen = {},
+        onNavigateToClipboardManagerScreen = {},
     )
 }

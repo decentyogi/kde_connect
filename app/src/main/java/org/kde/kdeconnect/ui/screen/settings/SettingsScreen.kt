@@ -12,9 +12,17 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -59,9 +67,10 @@ fun SettingsScreen(
     saveStorageLocation: (Context, Uri) -> Unit,
     resetStorageLocation: () -> Unit,
     getDisplayPath: (Context, Uri) -> String,
-    navigator: Navigator
+    navigator: Navigator,
 ) {
     val context = LocalContext.current
+    val listState = rememberLazyListState()
 
     val exportLogsLauncher = rememberLauncherForActivityResult(
         contract = CreateFileResultContract()
@@ -75,156 +84,207 @@ fun SettingsScreen(
         setBluetoothEnabled(result.resultCode == RESULT_OK)
     }
 
+    val destinationSelector = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.OpenDocumentTree()
+    ) { uri ->
+        uri?.let { saveStorageLocation(context, it) }
+    }
+
+    val themeEntries = stringArrayResource(R.array.theme_list)
+    val themeOptions = remember(themeEntries) { AppTheme.entries.zip(themeEntries).toList() }
+
+    val formattedDisplayPath by remember(uiState.fileDestination) {
+        derivedStateOf {
+            uiState.fileDestination?.let { getDisplayPath(context, it) }
+        }
+    }
+
     HazeScaffold(
         title = stringResource(R.string.settings),
+        scrollState = null,
         backAction = BackAction.Normal(navigator),
-    ) {
-        CategoryTitleTextSmall(stringResource(R.string.app))
-        DialogTextPreference(
-            title = stringResource(R.string.settings_rename),
-            icon = painterResource(R.drawable.id_card),
-            value = uiState.deviceName,
-            filterInput = {
-                DeviceHelper.filterInvalidCharactersFromDeviceName(it)
-                    .take(DeviceHelper.MAX_DEVICE_NAME_LENGTH)
-            },
-            onValueChanged = {
-                setDeviceName(it)
+    ) { paddingValues ->
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues)
+                .padding(horizontal = 16.dp),
+            state = listState,
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(bottom = 24.dp)
+        ) {
+            item(key = "cat_app") {
+                CategoryTitleTextSmall(stringResource(R.string.app))
             }
-        )
 
-        val themeEntries = stringArrayResource(R.array.theme_list)
-        val themeOptions = AppTheme.entries.zip(themeEntries)
+            item(key = "pref_rename") {
+                DialogTextPreference(
+                    title = stringResource(R.string.settings_rename),
+                    icon = painterResource(R.drawable.id_card),
+                    value = uiState.deviceName,
+                    filterInput = {
+                        DeviceHelper.filterInvalidCharactersFromDeviceName(it)
+                            .take(DeviceHelper.MAX_DEVICE_NAME_LENGTH)
+                    },
+                    onValueChanged = {
+                        setDeviceName(it)
+                    }
+                )
+            }
 
-        DialogItemSelectPreference(
-            title = stringResource(R.string.theme_dialog_title),
-            icon = painterResource(R.drawable.colors),
-            value = uiState.theme,
-            values = themeOptions.toList(),
-            onValueChanged = { setTheme(it) }
-        )
+            item(key = "pref_theme") {
+                DialogItemSelectPreference(
+                    title = stringResource(R.string.theme_dialog_title),
+                    icon = painterResource(R.drawable.colors),
+                    value = uiState.theme,
+                    values = themeOptions,
+                    onValueChanged = { setTheme(it) }
+                )
+            }
 
-        SwitchPreference(
-            title = stringResource(R.string.blur_effects),
-            icon = painterResource(R.drawable.blur_on),
-            value = uiState.blur,
-            onValueChanged = { setBlur(it) },
-        )
+            item(key = "pref_blur") {
+                SwitchPreference(
+                    title = stringResource(R.string.blur_effects),
+                    icon = painterResource(R.drawable.blur_on),
+                    value = uiState.blur,
+                    onValueChanged = { setBlur(it) },
+                )
+            }
 
-        NavigatePreference(
-            title = stringResource(R.string.saved_devices),
-            icon = painterResource(R.drawable.devices),
-            onClick = { navigator.goTo(SavedDevicesKey) }
-        )
+            item(key = "pref_saved_devices") {
+                NavigatePreference(
+                    title = stringResource(R.string.saved_devices),
+                    icon = painterResource(R.drawable.devices),
+                    onClick = { navigator.goTo(SavedDevicesKey) }
+                )
+            }
 
-        CategoryTitleTextSmall(stringResource(R.string.advanced))
-        NavigatePreference(
-            title = stringResource(R.string.connections),
-            icon = painterResource(R.drawable.responsive_layout),
-            onClick = { navigator.goTo(ConnectionsSettingsKey) }
-        )
-        NavigatePreference(
-            title = stringResource(R.string.calls_messages),
-            icon = painterResource(R.drawable.perm_phone_msg),
-            onClick = { navigator.goTo(TelephonyPluginSettingsKey) }
-        )
-        NavigatePreference(
-            title = stringResource(R.string.notifications_media),
-            icon = painterResource(R.drawable.notifications),
-            onClick = { navigator.goTo(NotificationSettingsKey) }
-        )
-        if (!SimpleSftpServer.SUPPORTS_NATIVEFS) {
-            NavigatePreference(
-                title = stringResource(R.string.filesystem),
-                icon = painterResource(R.drawable.folder_managed),
-                onClick = { navigator.goTo(SftpPluginSettingsKey) }
-            )
-        }
+            item(key = "cat_advanced") {
+                CategoryTitleTextSmall(stringResource(R.string.advanced))
+            }
 
-        SwitchPreference(
-            title = stringResource(R.string.enable_bluetooth),
-            icon = painterResource(R.drawable.bluetooth),
-            value = uiState.bluetoothEnabled,
-            onValueChanged = { newValue ->
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && newValue) {
-                    val missingPermissionRequests =
-                        arrayOf(BLUETOOTH_CONNECT, BLUETOOTH_SCAN).filter {
-                            ContextCompat.checkSelfPermission(
-                                context,
-                                it
-                            ) != PackageManager.PERMISSION_GRANTED
-                        }.map { permission ->
-                            PermissionRequest(
-                                title = R.string.enable_bluetooth,
-                                description = R.string.bluetooth_permission_request,
-                                intentAction = permission,
-                                positiveButton = R.string.grant
-                            )
+            item(key = "pref_connections") {
+                NavigatePreference(
+                    title = stringResource(R.string.connections),
+                    icon = painterResource(R.drawable.responsive_layout),
+                    onClick = { navigator.goTo(ConnectionsSettingsKey) }
+                )
+            }
+
+            item(key = "pref_calls_messages") {
+                NavigatePreference(
+                    title = stringResource(R.string.calls_messages),
+                    icon = painterResource(R.drawable.perm_phone_msg),
+                    onClick = { navigator.goTo(TelephonyPluginSettingsKey) }
+                )
+            }
+
+            item(key = "pref_notifications_media") {
+                NavigatePreference(
+                    title = stringResource(R.string.notifications_media),
+                    icon = painterResource(R.drawable.notifications),
+                    onClick = { navigator.goTo(NotificationSettingsKey) }
+                )
+            }
+
+            if (!SimpleSftpServer.SUPPORTS_NATIVEFS) {
+                item(key = "pref_filesystem") {
+                    NavigatePreference(
+                        title = stringResource(R.string.filesystem),
+                        icon = painterResource(R.drawable.folder_managed),
+                        onClick = { navigator.goTo(SftpPluginSettingsKey) }
+                    )
+                }
+            }
+
+            item(key = "pref_bluetooth") {
+                SwitchPreference(
+                    title = stringResource(R.string.enable_bluetooth),
+                    icon = painterResource(R.drawable.bluetooth),
+                    value = uiState.bluetoothEnabled,
+                    onValueChanged = { newValue ->
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && newValue) {
+                            val missingPermissionRequests =
+                                arrayOf(BLUETOOTH_CONNECT, BLUETOOTH_SCAN).filter {
+                                    ContextCompat.checkSelfPermission(
+                                        context,
+                                        it
+                                    ) != PackageManager.PERMISSION_GRANTED
+                                }.map { permission ->
+                                    PermissionRequest(
+                                        title = R.string.enable_bluetooth,
+                                        description = R.string.bluetooth_permission_request,
+                                        intentAction = permission,
+                                        positiveButton = R.string.grant
+                                    )
+                                }
+
+                            if (missingPermissionRequests.isNotEmpty()) {
+                                bluetoothPermissionLauncher.launch(
+                                    Intent(
+                                        context,
+                                        PermissionExplanationActivity::class.java
+                                    ).apply {
+                                        putExtra(
+                                            "permissionRequests",
+                                            Json.encodeToString(missingPermissionRequests.take(1))
+                                        )
+                                    })
+                                return@SwitchPreference
+                            }
                         }
+                        setBluetoothEnabled(newValue)
+                    }
+                )
+            }
 
-                    if (missingPermissionRequests.isNotEmpty()) {
-                        bluetoothPermissionLauncher.launch(
-                            Intent(
-                                context,
-                                PermissionExplanationActivity::class.java
-                            ).apply {
-                                // Take 1 because I think you only need to ask for one of them and you get all? Todo: Test that
-                                putExtra(
-                                    "permissionRequests",
-                                    Json.encodeToString(missingPermissionRequests.take(1))
-                                )
-                            })
-                        return@SwitchPreference
+            item(key = "pref_storage_location") {
+                Row(
+                    modifier = Modifier.height(IntrinsicSize.Min),
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Preference(
+                        modifier = Modifier.weight(1f),
+                        title = stringResource(R.string.share_destination_folder_preference),
+                        summary = formattedDisplayPath,
+                        icon = painterResource(R.drawable.file_export),
+                        onClick = {
+                            destinationSelector.launch(null)
+                        }
+                    )
+                    IconPreference(
+                        title = stringResource(R.string.reset),
+                        painter = painterResource(R.drawable.replay),
+                        enabled = !uiState.fileDestinationIsDefault
+                    ) {
+                        resetStorageLocation()
                     }
                 }
-                setBluetoothEnabled(newValue)
             }
-        )
 
-        val destinationSelector = rememberLauncherForActivityResult(
-            contract = ActivityResultContracts.OpenDocumentTree()
-        ) { uri ->
-            uri?.let { saveStorageLocation(context, it) }
-        }
+            item(key = "cat_other") {
+                CategoryTitleTextSmall(stringResource(R.string.other))
+            }
 
-        Row(
-            modifier = Modifier.height(IntrinsicSize.Min),
-            horizontalArrangement = Arrangement.spacedBy(8.dp)
-        ) {
-            Preference(
-                modifier = Modifier.weight(1f),
-                title = stringResource(R.string.share_destination_folder_preference),
-                summary = uiState.fileDestination?.let { getDisplayPath(context, it) },
-                icon = painterResource(R.drawable.file_export),
-                onClick = {
-                    destinationSelector.launch(null)
-                }
-            )
-            IconPreference(
-                title = stringResource(R.string.reset),
-                painter = painterResource(R.drawable.replay),
-                enabled = !uiState.fileDestinationIsDefault
-            ) {
-                resetStorageLocation()
+            item(key = "pref_export_logs") {
+                Preference(
+                    title = stringResource(R.string.settings_export_logs),
+                    summary = stringResource(R.string.settings_export_logs_text),
+                    icon = painterResource(R.drawable.export_notes),
+                    onClick = {
+                        exportLogsLauncher.launch(CreateFileParams("text/plain", "kdeconnect-log.txt"))
+                    }
+                )
+            }
+
+            item(key = "pref_about") {
+                NavigatePreference(
+                    title = stringResource(R.string.about),
+                    icon = painterResource(R.drawable.info),
+                    onClick = { navigator.goTo(AboutKey) }
+                )
             }
         }
-
-        CategoryTitleTextSmall(stringResource(R.string.other))
-
-        Preference(
-            title = stringResource(R.string.settings_export_logs),
-            summary = stringResource(R.string.settings_export_logs_text),
-            icon = painterResource(R.drawable.export_notes),
-            onClick = {
-                exportLogsLauncher.launch(CreateFileParams("text/plain", "kdeconnect-log.txt"))
-            }
-        )
-
-        NavigatePreference(
-            title = stringResource(R.string.about),
-            icon = painterResource(R.drawable.info),
-            onClick = { navigator.goTo(AboutKey) }
-        )
     }
 }
 
@@ -240,7 +300,7 @@ fun SettingsPreview() {
         setBlur = {},
         saveStorageLocation = { _, _ -> },
         resetStorageLocation = {},
-        getDisplayPath = { _, _ -> ""},
+        getDisplayPath = { _, _ -> "" },
         navigator = Navigator()
     )
 }

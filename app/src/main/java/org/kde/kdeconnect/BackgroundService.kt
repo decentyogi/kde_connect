@@ -37,9 +37,15 @@ import org.kde.kdeconnect.backends.lan.LanLinkProvider
 import org.kde.kdeconnect.helpers.LoggerTagged
 import org.kde.kdeconnect.helpers.NotificationHelper
 import org.kde.kdeconnect.helpers.PermissionHelper
+import org.kde.kdeconnect.helpers.HotspotHelper
+import org.kde.kdeconnect.helpers.CustomDevicesHelper
+import org.kde.kdeconnect.datastore.ConnectionsSettingsDataStore
 import org.kde.kdeconnect.plugins.clipboard.ClipboardFloatingActivity
 import org.kde.kdeconnect.plugins.clipboard.ClipboardPlugin
+import org.kde.kdeconnect.plugins.mousepad.SendKeystrokeReceiver
+import org.kde.kdeconnect.plugins.share.SendFileActivity
 import org.kde.kdeconnect.ui.MainActivity
+import androidx.core.app.RemoteInput
 import com.leekleak.knot.R
 import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
@@ -57,12 +63,21 @@ import kotlin.concurrent.atomics.ExperimentalAtomicApi
 class BackgroundService : Service() {
     private val data: BackgroundServiceData by inject()
     private val deviceManager: DeviceManager by inject()
+    private val connectionsDataStore: ConnectionsSettingsDataStore by inject()
+    private val customDevicesHelper: CustomDevicesHelper by inject()
     val serviceScope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
 
     private val linkProviders = mutableListOf<BaseLinkProvider>()
+    private var lastKnownStates: Map<String, DeviceState> = emptyMap()
+
+    private fun getEffectiveStates(states: Map<String, DeviceState>): Map<String, DeviceState> {
+        if (states.isNotEmpty()) return states
+        if (lastKnownStates.isNotEmpty()) return lastKnownStates
+        return deviceManager.devices.value.mapValues { it.value.state.value }
+    }
 
     fun updateForegroundNotification(states: Map<String, DeviceState>) {
-        // Update the foreground notification with the currently connected device list
+        lastKnownStates = states
         val notificationManager = getSystemService<NotificationManager>()
         notificationManager?.notify(FOREGROUND_NOTIFICATION_ID, createForegroundNotification(states))
     }
@@ -101,6 +116,13 @@ class BackgroundService : Service() {
             deviceManager.allDeviceStatesMap.collect { states ->
                 updateForegroundNotification(states)
             }
+        }
+
+        // Auto-detect hotspot clients on startup
+        serviceScope.launch {
+            try {
+                HotspotHelper.autoDetectAndAddHotspotIps(this@BackgroundService, connectionsDataStore, customDevicesHelper)
+            } catch (_: Exception) { }
         }
 
         // Register screen on listener
@@ -142,7 +164,8 @@ class BackgroundService : Service() {
     private fun createForegroundNotification(states: Map<String, DeviceState>): Notification {
         // Why is this needed: https://developer.android.com/guide/components/services#Foreground
 
-        val connectedDevices = states.values.filter { it.isReachable && it.isPaired }
+        val effectiveStates = getEffectiveStates(states)
+        val connectedDevices = effectiveStates.values.filter { it.isReachable && it.isPaired }
 
         val intent = Intent(this, MainActivity::class.java)
         if (connectedDevices.size == 1) {
@@ -171,12 +194,43 @@ class BackgroundService : Service() {
                     )
                 )
 
-                // Adding an action button to send clipboard manually in Android 10 and later.
-                if (!ClipboardPlugin.canSyncAutomatically(this@BackgroundService)) {
-                    val sendClipboard = ClipboardFloatingActivity.getIntent(this@BackgroundService, true)
-                    val sendPendingClipboard = PendingIntent.getActivity(this@BackgroundService, 3, sendClipboard, UPDATE_IMMUTABLE_FLAGS)
-                    addAction(0, getString(R.string.foreground_notification_send_clipboard), sendPendingClipboard)
+                // Action 1: Send clipboard directly from notification bar
+                val sendClipboard = ClipboardFloatingActivity.getIntent(this@BackgroundService, true)
+                val sendPendingClipboard = PendingIntent.getActivity(this@BackgroundService, 3, sendClipboard, UPDATE_IMMUTABLE_FLAGS)
+                addAction(R.drawable.assignment, getString(R.string.foreground_notification_send_clipboard), sendPendingClipboard)
+
+                // Action 2: Send file directly from notification bar
+                val sendFileIntent = Intent(this@BackgroundService, SendFileActivity::class.java).apply {
+                    if (connectedDevices.size == 1) {
+                        putExtra(MainActivity.EXTRA_DEVICE_ID, connectedDevices[0].deviceInfo.id)
+                    }
+                    flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
                 }
+                val sendFilePendingIntent = PendingIntent.getActivity(this@BackgroundService, 4, sendFileIntent, UPDATE_IMMUTABLE_FLAGS)
+                addAction(R.drawable.description, getString(R.string.send_files), sendFilePendingIntent)
+
+                // Action 3: Send keystroke directly from notification bar with inline reply / input
+                val keystrokeIntent = Intent(this@BackgroundService, SendKeystrokeReceiver::class.java).apply {
+                    action = SendKeystrokeReceiver.ACTION_SEND_KEYSTROKE
+                    if (connectedDevices.size == 1) {
+                        putExtra(SendKeystrokeReceiver.EXTRA_DEVICE_ID, connectedDevices[0].deviceInfo.id)
+                    }
+                }
+                val keystrokePendingIntent = PendingIntent.getBroadcast(
+                    this@BackgroundService,
+                    5,
+                    keystrokeIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_MUTABLE
+                )
+                val remoteInput = RemoteInput.Builder(SendKeystrokeReceiver.EXTRA_KEYSTROKE_TEXT)
+                    .setLabel(getString(R.string.send_keystroke_hint))
+                    .build()
+                val keystrokeAction = NotificationCompat.Action.Builder(
+                    R.drawable.keyboard,
+                    getString(R.string.foreground_notification_send_keystroke),
+                    keystrokePendingIntent
+                ).addRemoteInput(remoteInput).build()
+                addAction(keystrokeAction)
             }
         }.build()
         
@@ -198,25 +252,34 @@ class BackgroundService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         LoggerTagged.d { "onStartCommand" }
 
+        val effectiveStates = getEffectiveStates(emptyMap())
+        val notification = createForegroundNotification(effectiveStates)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            try {
+                startForeground(FOREGROUND_NOTIFICATION_ID, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE)
+            } catch (e: Exception) {
+                LoggerTagged.w(e) { "Couldn't startForeground" }
+            }
+        }
+        else {
+            try {
+                startForeground(FOREGROUND_NOTIFICATION_ID, notification)
+            } catch (e: Exception) {
+                LoggerTagged.w(e) { "Couldn't startForeground" }
+            }
+        }
+
         if (!PermissionHelper.hasRequiredPermissions(this)) {
             LoggerTagged.w { "BackgroundService started without required permissions, stopping" }
             stopSelf()
             return START_NOT_STICKY
         }
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            try {
-                startForeground(FOREGROUND_NOTIFICATION_ID, createForegroundNotification(emptyMap()), ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE)
-            } catch (e: IllegalStateException) { // To catch ForegroundServiceStartNotAllowedException
-                LoggerTagged.w(e) { "Couldn't startForeground" }
-                return START_STICKY
-            }
-        }
-        else {
-            startForeground(FOREGROUND_NOTIFICATION_ID, createForegroundNotification(emptyMap()))
-        }
         if (intent != null && intent.getBooleanExtra("refresh", false)) {
             serviceScope.launch {
+                try {
+                    HotspotHelper.autoDetectAndAddHotspotIps(this@BackgroundService, connectionsDataStore, customDevicesHelper)
+                } catch (_: Exception) { }
                 onNetworkChange(null)
             }
         }

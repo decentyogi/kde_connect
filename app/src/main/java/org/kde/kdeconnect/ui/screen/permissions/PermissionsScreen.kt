@@ -61,8 +61,8 @@ fun PermissionsScreen(
     }
     var hasNetworkPermission by remember {
         mutableStateOf(
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CINNAMON_BUN) {
-                context.checkSelfPermission(Manifest.permission.ACCESS_LOCAL_NETWORK) == PackageManager.PERMISSION_GRANTED
+            if (Build.VERSION.SDK_INT >= 37) {
+                context.checkSelfPermission("android.permission.ACCESS_LOCAL_NETWORK") == PackageManager.PERMISSION_GRANTED
             } else true
         )
     }
@@ -75,8 +75,8 @@ fun PermissionsScreen(
                     context.checkSelfPermission(Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED
                 } else true
                 hasOverlayPermission = Settings.canDrawOverlays(context)
-                hasNetworkPermission = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CINNAMON_BUN) {
-                    context.checkSelfPermission(Manifest.permission.ACCESS_LOCAL_NETWORK) == PackageManager.PERMISSION_GRANTED
+                hasNetworkPermission = if (Build.VERSION.SDK_INT >= 37) {
+                    context.checkSelfPermission("android.permission.ACCESS_LOCAL_NETWORK") == PackageManager.PERMISSION_GRANTED
                 } else true
 
                 if (hasNotificationPermission && hasOverlayPermission && hasNetworkPermission) {
@@ -146,21 +146,27 @@ fun PermissionsScreen(
             icon = R.drawable.flip_to_front,
             granted = hasOverlayPermission,
             onClick = {
-                val intent = Intent(
-                    Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                    "package:${context.packageName}".toUri()
-                )
-                context.startActivity(intent)
+                try {
+                    val intent = Intent(
+                        Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                        "package:${context.packageName}".toUri()
+                    )
+                    context.startActivity(intent)
+                } catch (_: Exception) {
+                    try {
+                        context.startActivity(Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION))
+                    } catch (_: Exception) { }
+                }
             }
         )
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.CINNAMON_BUN) {
+        if (Build.VERSION.SDK_INT >= 37) {
             PermissionCard(
                 title = stringResource(R.string.local_network_access),
                 description = stringResource(R.string.required_to_find_other_devices),
                 icon = R.drawable.wifi,
                 granted = hasNetworkPermission,
-                onClick = { networkLauncher.launch(Manifest.permission.ACCESS_LOCAL_NETWORK) }
+                onClick = { networkLauncher.launch("android.permission.ACCESS_LOCAL_NETWORK") }
             )
         }
     }

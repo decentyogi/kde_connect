@@ -1,0 +1,6 @@
+{
+  "name": "KDE Connect",
+  "description": "KDE Connect Android app for seamless integration between devices, notifications, files, and more.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

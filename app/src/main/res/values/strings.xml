@@ -14,10 +14,14 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
         We really appreciate your translations, but make sure to submit them by working with the proper team!
   -->
     <string name="kde_connect">KDE Connect</string>
+    <string name="app_name">KDE Connect</string>
     <string name="manifest_label_share">Send to Device</string>
     <string name="foreground_notification_no_devices">Not connected to any device</string>
     <string name="foreground_notification_devices">Connected to: %s</string>
     <string name="foreground_notification_send_clipboard">Send Clipboard</string>
+    <string name="foreground_notification_send_keystroke">Send Keystroke</string>
+    <string name="send_keystroke_hint">Type text to send to PC…</string>
+    <string name="keystroke_sent">Sent keystroke: \"%s\"</string>
     <string name="pref_plugin_telephony">Telephony notifier</string>
     <string name="pref_plugin_telephony_desc">Send notifications for incoming calls</string>
     <string name="pref_plugin_battery">Battery report</string>
@@ -469,6 +473,21 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
   <string name="redesign">Redesign</string>
   <string name="ui_design_implementation_backend_refactoring"><![CDATA[UI design & implementation, backend refactoring]]></string>
     <string name="blur_effects">Blur Effects</string>
-
+    <string name="send_file_to">Sending file to %s</string>
+    <string name="clipboard_manager">Clipboard Manager</string>
+    <string name="clipboard_history_empty">No copied items yet</string>
+    <string name="clipboard_history_empty_desc">Copied text will be saved here automatically (up to 1,000 items).</string>
+    <string name="clear_clipboard_history">Clear History</string>
+    <string name="clear_clipboard_history_confirm">Are you sure you want to clear all copied items?</string>
+    <string name="search_copied_items">Search copied items</string>
+    <string name="item_copied_to_clipboard">Copied to clipboard</string>
+    <string name="item_deleted">Item deleted</string>
+    <string name="send_to_device">Send to device</string>
+    <string name="sent_to_device">Sent to %s</string>
+    <string name="autodetect_hotspot_ip">Auto-detect Hotspot / PC IP</string>
+    <string name="autodetect_hotspot_desc">Search for connected PC on personal hotspot</string>
+    <string name="hotspot_search_success">Found and added PC IP: %s</string>
+    <string name="hotspot_no_devices">No new devices detected on hotspot</string>
+    <string name="hotspot_scanning">Scanning hotspot network…</string>
 
 </resources>

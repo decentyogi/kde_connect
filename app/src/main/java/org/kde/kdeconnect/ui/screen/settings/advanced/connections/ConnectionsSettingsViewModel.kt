@@ -11,7 +11,10 @@ import kotlinx.coroutines.launch
 import org.kde.kdeconnect.DeviceHost
 import org.kde.kdeconnect.datastore.ConnectionsSettingsDataStore
 import org.kde.kdeconnect.helpers.CustomDevicesHelper
+import org.kde.kdeconnect.helpers.HotspotHelper
 import org.kde.kdeconnect.helpers.TrustedNetworkHelper
+import android.content.Context
+import com.leekleak.knot.R
 
 data class ConnectionsSettingsUiState(
     val trustedNetworks: List<String> = emptyList(),
@@ -27,6 +30,7 @@ class ConnectionsSettingsViewModel(
     private val customDevicesHelper: CustomDevicesHelper
 ) : ViewModel() {
     private val _updateTrigger = MutableStateFlow(0)
+    val isScanningHotspot = MutableStateFlow(false)
 
     val uiState: StateFlow<ConnectionsSettingsUiState> = combine(
         connectionsDataStore.trustedNetworks,
@@ -53,6 +57,26 @@ class ConnectionsSettingsViewModel(
 
     init {
         uiState.value.customDevices.forEach { it.checkReachable { updateUiState() } }
+    }
+
+    fun autoDetectHotspotDevices(context: Context, onResult: (String) -> Unit) {
+        if (isScanningHotspot.value) return
+        viewModelScope.launch {
+            isScanningHotspot.value = true
+            try {
+                val found = HotspotHelper.autoDetectAndAddHotspotIps(context, connectionsDataStore, customDevicesHelper)
+                updateUiState()
+                if (found.isNotEmpty()) {
+                    onResult(context.getString(R.string.hotspot_search_success, found.joinToString(", ")))
+                } else {
+                    onResult(context.getString(R.string.hotspot_no_devices))
+                }
+            } catch (e: Exception) {
+                onResult("Scan error: ${e.message}")
+            } finally {
+                isScanningHotspot.value = false
+            }
+        }
     }
 
     fun updateUiState() {

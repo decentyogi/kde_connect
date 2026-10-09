@@ -28,6 +28,7 @@ import org.kde.kdeconnect.backends.BaseLinkProvider
 import org.kde.kdeconnect.backends.lan.LanLink.ConnectionStarted
 import org.kde.kdeconnect.helpers.CustomDevicesHelper
 import org.kde.kdeconnect.helpers.DeviceHelper
+import org.kde.kdeconnect.helpers.HotspotHelper
 import org.kde.kdeconnect.helpers.LoggerTagged
 import org.kde.kdeconnect.helpers.TrustedNetworkHelper
 import org.kde.kdeconnect.helpers.isPrivateAddress
@@ -523,6 +524,14 @@ class LanLinkProvider(
                 hostList.add(DeviceHost.BROADCAST) //Default: broadcast.
             } else {
                 LoggerTagged.i { "Current network isn't trusted, not broadcasting" }
+            }
+
+            for (subnetBroadcast in HotspotHelper.getSubnetBroadcastAddresses()) {
+                DeviceHost.toDeviceHostOrNull(subnetBroadcast)?.let { bHost ->
+                    if (hostList.none { it.toString() == bHost.toString() }) {
+                        hostList.add(bHost)
+                    }
+                }
             }
 
             val ipList = ArrayList<InetAddress>()

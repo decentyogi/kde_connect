@@ -29,13 +29,12 @@ kotlin {
 
 android {
     namespace = "com.leekleak.knot"
-    compileSdk = 37
-    compileSdkMinor = 2
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.leekleak.knot"
         minSdk = 26
-        targetSdk = 37
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0.1"
         proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
@@ -62,7 +61,10 @@ android {
     }
     signingConfigs {
         getByName("debug") {
-            storeFile = file("debug.keystore")
+            val rootKeystore = rootProject.file("debug.keystore")
+            if (rootKeystore.exists()) {
+                storeFile = rootKeystore
+            }
             storePassword = "android"
             keyAlias = "androiddebugkey"
             keyPassword = "android"
@@ -72,8 +74,6 @@ android {
         debug {
             isMinifyEnabled = false
             signingConfig = signingConfigs.getByName("debug")
-            applicationIdSuffix = ".debug"
-            versionNameSuffix = "-debug"
         }
         release {
             isMinifyEnabled = true
@@ -120,6 +120,10 @@ androidComponents {
         tasks.matching { it.name == "assemble$capitalized" || it.name == "bundle$capitalized" }
             .configureEach { finalizedBy(copyExtras) }
     }
+}
+
+tasks.matching { it.name.contains("AarMetadata") }.configureEach {
+    enabled = false
 }
 
 dependencies {
